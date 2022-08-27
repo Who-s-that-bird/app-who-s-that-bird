@@ -3,6 +3,9 @@ const hbs = require('hbs');
 const logger = require('morgan');
 
 
+require("dotenv").config();
+require("./config/db.config")
+
 const app = express();
 
 app.use(express.static('public'));

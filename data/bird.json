@@ -1,0 +1,11 @@
+[
+    {
+        "name" : "Buho real",
+        "scifyName": "Bubo bubo",
+        "comment": "El búho real es un ave muy grande, reconocida a veces como el búho más grande del mundo, aunque se disputa este puesto con el búho de Blakiston (B. blakistoni), que es un poco más pesado y con el cárabo lapón (Strix nebulosa), que, aunque es menos pesado, es más grande. Tiene una envergadura de alas de entre 131–188 cm, con los especímenes más grandes posiblemente alcanzando los 2 m. La longitud puede variar de 56 a 75 cm. Las hembras pueden pesar de 1.75 a 4.6 kg y los machos de 1.22 a 3.2 kg. Además de que la hembra es más grande, hay poco dimorfismo sexual en el búho real, aunque los penachos con forma de orejas suelen estar más erguidos en machos que en hembras. Por lo tanto, es prácticamente imposible diferenciar los sexos cuando son observados en la naturaleza.",
+        "weight" : "De 2 a 4 Kg",
+        "size" : "60 a 75 cm de longitud. Y hasta 180cm de envergadura",
+        "longevity" : "20 años en la naturaleza, y en cautividad casos de hasta 60años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661603145/birdApp/B%C3%BAho_real_pxrj0y.jpg"
+    }
+]
