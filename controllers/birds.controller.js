@@ -13,28 +13,17 @@ module.exports.list = (req, res, next) => {
 }
 
 module.exports.details = (req, res, next) => {
-    const {id} = req.params
-
-    Bird.findById(id);
-    console.log({id})
-    .then((bird) =>{
-        res.render("birds/birdDetails", {bird})
-    })
-    .catch((err)=>{
-        console.error(err)
-        next(createError( 404, "Not Found"))
-    })
-}
-
-module.exports.detailTotal = (req, res, next) => {
-    const {id} = req.params
+    const { id } = req.params;
 
     Bird.findById(id)
+    console.log(id, "imprime el log del controlador, pero no entra en el then")
     .then((bird) =>{
-        res.render("birds/birdDetailTotal", {bird})
+        console.log("he entrado al then")
+        res.render("birds/birdDetails", { bird })
     })
     .catch((err)=>{
         console.error(err)
-        next(createError( 404, "Not Found"))
+        next(createError( 404, "Registro no encontrado"))
     })
 }
+

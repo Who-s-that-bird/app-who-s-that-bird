@@ -9,7 +9,7 @@ require("./config/db.config")
 const app = express();
 
 app.use(express.static('public'));
-
+app.use(express.urlencoded({ extended: false }))
 app.use(logger('dev'));
 
 app.set('views', __dirname + '/views');
