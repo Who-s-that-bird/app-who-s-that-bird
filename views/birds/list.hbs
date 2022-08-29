@@ -1,1 +1,9 @@
-<h1>listado de aves</h1>
+<h1>Listado de aves</h1>
+
+{{#each birds as |bird|}}
+  <div>
+    <img src="{{bird.image}}" alt="{{bird.name}}" width="300">
+    <h3>{{bird.title}}</h3>
+    <h4>{{bird.scifiName}}</h4>
+  </div>
+{{/each}}

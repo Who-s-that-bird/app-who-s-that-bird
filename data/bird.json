@@ -3,9 +3,9 @@
         "name" : "Búho real",
         "scifyName": "Bubo bubo",
         "comment": "Es un ave sedentaria. Rarísima en zonas urbanas y poblaciones. Se asienta principalmente en coníferas maduras. A pesar de su tamaño y sus garras no es violenta cerca de su asentamiento, y no es agresiva con los seres humanos. Actividad nocturna y crepuscular.",
-        "weight" : "2 a 4 Kgs",
-        "size" : "59-73 cms",
-        "wingspan" : "138-170 cms",
+        "weight" : "de 2 a 4 Kgs",
+        "size" : "de 59 a 73 cms",
+        "wingspan" : "de 138 a 170 cms",
         "longevity" : "20 años en la naturaleza, y en cautividad casos de hasta 60 años",
         "image": "https://res.cloudinary.com/merjur/image/upload/v1661769125/birdApp/buhoReal/B%C3%9AHO_REAL_6_bif6xl.jpg"
     },
@@ -15,8 +15,8 @@
         "scifyName": "Otus Scops",
         "comment": "Sedentario en el sur de España, aquí acude en verano. Caza insectos de noche ya cerrada. Nos acompaña con su silvido repetitivo, más o menos cada 3-4 segundos. Es frecuente escuchar el canto en dúo. ",
         "weight" : "",
-        "size" : "19 A 21 cms",
-        "wingspan" : "47 A 54 cms",
+        "size" : "de 19 a 21 cms",
+        "wingspan" : "de 47 a 54 cms",
         "longevity" : "",
         "image": "https://res.cloudinary.com/merjur/image/upload/v1661769149/birdApp/autillo/AUTILLO_6_btbkpz.jpg"
     },
@@ -24,12 +24,100 @@
         "name":"Abubilla",
         "scifyName": "Upupa Epops",
         "comment": "Aquí se presenta como migrante, pero es residente en el sur y sureste peninsular. Anida en huecos de árboles, paredes de piedra, en cajas nido…",
-        "weight" : "70-100 gramos.",
-        "size" : "26-28 cms",
-        "wingspan" : "44-48 cms",
+        "weight" : "de 70-100 gramos.",
+        "size" : "de 26 a 28 cms",
+        "wingspan" : "de 44 a 48 cms",
         "longevity" : "de 8 a 10 años",
         "image": "https://res.cloudinary.com/merjur/image/upload/v1661769106/birdApp/abubilla/ABUBILLA_3_que6xj.jpg"
-    }
-    
+    },
+    {
+        "name":"Abejaruco Europeo",
+        "scifyName": "Merops Apiaster",
+        "comment": "Iverna en África. Anida en terraplenes donde realiza un profundo agujero, o bien reutiliza los de otros años, normalmente en terrenos abiertos y cerca de ríos. Colores muy llamativos.",
+        "weight" : "de 50 a 70 gramos",
+        "size" : "de 25 a 29 cms",
+        "wingspan" : "de 36 a 40 cms",
+        "longevity" : "de 5 a 10 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661790400/birdApp/abejaruco%20eur/ABEJARUCO_EUROPEO_5_yds3os.jpg" 
+    },
+    {
+        "name":"Pito Real",
+        "scifyName": "Picus Viridis",
+        "comment": "El adulto tiene el píleo y la nuca completamente rojos, los jóvenes presentan una librea mucho más llamativa. Pasan mucho tiempo en el suelo pues se alimentan también de hormigas.",
+        "weight" : "200 gramos",
+        "size" : "de 30 a 36 cms",
+        "wingspan" : "de 40 a 50 cms",
+        "longevity" : "hasta 10 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661790643/birdApp/pito%20real/PITO_REAL_7_nfziee.jpg" 
+    },
+    {   "name": "Pico Picapinos",
+        "scifyName": "Dendrocopos Maior",
+        "comment": "Es una especie fundamentalmente sedentaria, que se desplaza muy poco desde su zona de anidación y alimento. El tableteo se relaciona con la formación del nido y la llamada a la reproducción.",
+        "weight" : "de 70 a 100 gramos",
+        "size" : "de 20 a 25 cms",
+        "wingspan" : "de 38 a 44 cms",
+        "longevity" : "",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661790620/birdApp/pico%20picapinos/PICO_PICAPINOS_1_g3wyuj.jpg" 
+    },
+    {
+        "name":"Pico Mediano",
+        "scifyName": "Dendrocopos Medius",
+        "comment": "Es sedentario y de escaso desplazamiento. Raro de ver. En España su área de distribución se va limitando hacia el norte. La zona existente en el Sistema Central es cada vez más débil.",
+        "weight" : "de 50 a 85 gramos",
+        "size" : "de 19 a 22 cms",
+        "wingspan" : "34 cms",
+        "longevity" : "",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661790596/birdApp/picomediano/PICO_MEDIANO_2_qlnhhv.jpg" 
+    },
+    {
+        "name":"Herrerillo Común",
+        "scifyName": "Cyanistes Caeruleus",
+        "comment": "Sedentario, se asienta en zonas arboladas de caducifolios y bosques mixtos, también en parques y jardines. Se cuelga boca abajo de las hojas para alimentarse. Frecuenta los comederos en invierno. Tiene una línea ocular muy marcada, y un gorro azul muy característico.",
+        "weight" : "de 10 a 12 gramos",
+        "size" : "de 11,5 cms",
+        "wingspan" : "de 18 cms",
+        "longevity" : "de 2 a 3 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661790572/birdApp/herrerillo%20comun/HERRERILLO_COM%C3%9AN_5_jsyrse.jpg" 
+    },
+    {
+        "name":"Herrerillo Capuchino",
+        "scifyName": "Lophophanes Cristatus",
+        "comment": "Vive en bosques de coníferas, raro verlo en caducifolios. Se alimenta en el suelo o en ramas bajas. Es dificil acercarse, pero se puede ver. En la cabeza blanca y negra se observa una cresta puntiaguda y triangular que lo distingue clarísimamente.",
+        "weight" : "de 8 a 16 gramos",
+        "size" : "de 10,5 a 12 cms",
+        "wingspan" : "de 20 cms",
+        "longevity" : "de 2 a 3 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661790543/birdApp/herrerillo%20capuchino/Herrerillo_capuchino_1_nt6uxh.jpg" 
+    },
+    {
+        "name":"Cigüeña Blanca",
+        "scifyName": "Ciconia Ciconia",
+        "comment": "ES migratoria de largas distancias, suele viajar a África durante el invierno, de donde suele volver para febrero. En ocasiones no migra, pero pasa períodos desaparecida en verano en busca de lugares con más alimento.",
+        "weight" : "de 2,3 a 4,5 kg",
+        "size" : "de 100 a 115 cms",
+        "wingspan" : "de 155 a 215 cms",
+        "longevity" : "35 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661790505/birdApp/cig%C3%BCe%C3%B1a%20blanca/Cig%C3%BCe%C3%B1a_blanca_2_q0l17n.jpg" 
+    },
+    {
+        "name":"Carbonero Garrapinos",
+        "scifyName": "Periparus Ater",
+        "comment": "Cría en bosques de coníferas, bastante frecuente en el Sistema Central, en invierno frecuenta parques y jardines. Se alimenta en las copas de los árboles. Algo más pequeña que el carbonero común, luce una mancha blanca en la nuca que lo diferencia.",
+        "weight" : "de 8 a 16 gramos",
+        "size" : "de 10 a 11,5 cms",
+        "wingspan" : "20 cms",
+        "longevity" : "de 2 a 3 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661790482/birdApp/carbonero%20garrapinos/DSCN6455_tzqylg.jpg" 
+    },
+    {
+        "name":"Carbonero Común",
+        "scifyName": "Parus Major",
+        "comment": "Especie muy común en bosques, parques y jardines. Sedentaria, frecuente y poco tímida, pequeña insectívora. Muy llamativa por sus colores.",
+        "weight" : "de 15 a 22 gramos",
+        "size" : "de 13, 5 a 15 cms",
+        "wingspan" : "de 22 a 24 cms",
+        "longevity" : "de 2 a 3 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661790457/birdApp/carbonero%20comun/DSCN5836_awnkhi.jpg" 
+    }    
 ]
 
