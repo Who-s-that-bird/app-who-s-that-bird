@@ -21,6 +21,7 @@ const routes = require('./config/routes.config')
 app.use(routes);
 
 app.use((err, req, res, next) => {
+  console.log("he ido al error de app.js, ahí lo llevas, pájaro!")
     res.render("error", { err });
   });
   

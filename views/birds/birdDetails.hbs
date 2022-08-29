@@ -1,8 +1,23 @@
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+
+<h1>Detalle {{bird._id}}</h1>
+
+ 
+
+    <div class="card" style="width: 18rem;">
+      <img
+        src="{{bird.image}}"
+        class="card-img-top"
+        alt="{{bird.name}}"
+        width="600"
+      />
+      <div class="card-body">
+        <h3 class="card-title">{{bird.name}}</h3>
+        <h4 class="card-title">{{bird.scifyName}}</h4>
+        <p class="card-text">{{bird.comment}}</p>
+
+        <a href="/birds/{{bird._id}}" class="btn btn-primary">Ver más detalles y Galería de Imágenes</a>
+        <a href="/birds/list">Volver al listado</a>
+      </div>
+    </div>
+ 
+

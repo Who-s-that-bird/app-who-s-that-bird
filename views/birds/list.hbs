@@ -1,9 +1,20 @@
 <h1>Listado de aves</h1>
 
-{{#each birds as |bird|}}
-  <div>
-    <img src="{{bird.image}}" alt="{{bird.name}}" width="300">
-    <h3>{{bird.title}}</h3>
-    <h4>{{bird.scifiName}}</h4>
-  </div>
-{{/each}}
+
+
+  {{#each birds as |bird|}}
+    <div class="card" style="width: 18rem;">
+      <img
+        src="{{bird.image}}"
+        class="card-img-top"
+        alt="{{bird.name}}"
+        width="600"
+      />
+      <div class="card-body">
+        <h3 class="card-title">{{bird.name}}</h3>
+        
+        <a href="/bird/{{bird._id}}" class="btn btn-primary">Ver detalles</a>
+      </div>
+    </div>
+  {{/each}}
+

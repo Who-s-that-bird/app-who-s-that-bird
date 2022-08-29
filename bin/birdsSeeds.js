@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Bird = require ("../models/Bird.model")
-const BIRDS = require("../data/bird.json")
+const BIRD = require("../data/bird.json")
 
 require("../config/db.config")
 
@@ -10,7 +10,7 @@ mongoose.connection.once("open", () => {
     .then(()=>{
         console.log("DB dropped!")
 
-        return Bird.create(BIRDS)
+        return Bird.create(BIRD)
     })
     .then ((createdBirds) => {
         console.log("calling birds ...........................🌍🌎🌏")
