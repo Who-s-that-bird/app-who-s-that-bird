@@ -4,4 +4,6 @@ const miscController = require("../controllers/misc.controller");
 // MISC
 router.get("/", miscController.home);
 
+// BIRDS
+
 module.exports = router;
