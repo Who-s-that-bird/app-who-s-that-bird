@@ -19,6 +19,9 @@ const birdSchema = new mongoose.Schema ({
     size: {
         type: String,
     },
+    wingspan:{
+        type: String,
+    },
     longevity: {
        type: String,
     },

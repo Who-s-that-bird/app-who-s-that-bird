@@ -1,11 +1,35 @@
 [
     {
-        "name" : "Buho real",
+        "name" : "Búho real",
         "scifyName": "Bubo bubo",
-        "comment": "El búho real es un ave muy grande, reconocida a veces como el búho más grande del mundo, aunque se disputa este puesto con el búho de Blakiston (B. blakistoni), que es un poco más pesado y con el cárabo lapón (Strix nebulosa), que, aunque es menos pesado, es más grande. Tiene una envergadura de alas de entre 131–188 cm, con los especímenes más grandes posiblemente alcanzando los 2 m. La longitud puede variar de 56 a 75 cm. Las hembras pueden pesar de 1.75 a 4.6 kg y los machos de 1.22 a 3.2 kg. Además de que la hembra es más grande, hay poco dimorfismo sexual en el búho real, aunque los penachos con forma de orejas suelen estar más erguidos en machos que en hembras. Por lo tanto, es prácticamente imposible diferenciar los sexos cuando son observados en la naturaleza.",
-        "weight" : "De 2 a 4 Kg",
-        "size" : "60 a 75 cm de longitud. Y hasta 180cm de envergadura",
-        "longevity" : "20 años en la naturaleza, y en cautividad casos de hasta 60años",
-        "image": "https://res.cloudinary.com/merjur/image/upload/v1661603145/birdApp/B%C3%BAho_real_pxrj0y.jpg"
+        "comment": "Es un ave sedentaria. Rarísima en zonas urbanas y poblaciones. Se asienta principalmente en coníferas maduras. A pesar de su tamaño y sus garras no es violenta cerca de su asentamiento, y no es agresiva con los seres humanos. Actividad nocturna y crepuscular.",
+        "weight" : "2 a 4 Kgs",
+        "size" : "59-73 cms",
+        "wingspan" : "138-170 cms",
+        "longevity" : "20 años en la naturaleza, y en cautividad casos de hasta 60 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661769125/birdApp/buhoReal/B%C3%9AHO_REAL_6_bif6xl.jpg"
+    },
+    
+    {
+        "name":"Autillo",
+        "scifyName": "Otus Scops",
+        "comment": "Sedentario en el sur de España, aquí acude en verano. Caza insectos de noche ya cerrada. Nos acompaña con su silvido repetitivo, más o menos cada 3-4 segundos. Es frecuente escuchar el canto en dúo. ",
+        "weight" : "",
+        "size" : "19 A 21 cms",
+        "wingspan" : "47 A 54 cms",
+        "longevity" : "",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661769149/birdApp/autillo/AUTILLO_6_btbkpz.jpg"
+    },
+    {
+        "name":"Abubilla",
+        "scifyName": "Upupa Epops",
+        "comment": "Aquí se presenta como migrante, pero es residente en el sur y sureste peninsular. Anida en huecos de árboles, paredes de piedra, en cajas nido…",
+        "weight" : "70-100 gramos.",
+        "size" : "26-28 cms",
+        "wingspan" : "44-48 cms",
+        "longevity" : "de 8 a 10 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1661769106/birdApp/abubilla/ABUBILLA_3_que6xj.jpg"
     }
+    
 ]
+
