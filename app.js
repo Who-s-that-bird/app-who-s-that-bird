@@ -7,6 +7,9 @@ const passport = require('passport');
 //require("./config/db.config");
 require('./config/passport.config');
 
+require("dotenv").config();
+require("./config/db.config")
+
 const app = express();
 
 app.use(express.static("public"));
@@ -32,7 +35,8 @@ const router = require("./config/routes.config");
 app.use(router);
 
 app.use((err, req, res, next) => {
-  res.render("error", { err });
-});
-
-app.listen(3000, () => console.log("Listening on port 3000"));
+  console.log("he ido al error de app.js, ahí lo llevas, pájaro!")
+    res.render("error", { err });
+  });
+  
+  app.listen(3000, () => console.log("Listening on port 3000"));

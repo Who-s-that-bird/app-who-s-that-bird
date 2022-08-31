@@ -1,0 +1,23 @@
+
+<h1>Detalle {{bird._id}}</h1>
+
+ 
+
+    <div class="card" style="width: 18rem;">
+      <img
+        src="{{bird.image}}"
+        class="card-img-top"
+        alt="{{bird.name}}"
+        width="600"
+      />
+      <div class="card-body">
+        <h3 class="card-title">{{bird.name}}</h3>
+        <h4 class="card-title">{{bird.scifyName}}</h4>
+        <p class="card-text">{{bird.comment}}</p>
+
+        <a href="/birds/{{bird._id}}" class="btn btn-primary">Ver más detalles y Galería de Imágenes</a>
+        <a href="/birds/list">Volver al listado</a>
+      </div>
+    </div>
+ 
+
