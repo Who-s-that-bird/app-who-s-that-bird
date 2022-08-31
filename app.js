@@ -1,25 +1,38 @@
-const express = require('express');
-const hbs = require('hbs');
-const logger = require('morgan');
+const express = require("express");
+const logger = require("morgan");
+const hbs = require("hbs");
+//const sessionConfig = require("./config/session.config");
+const passport = require('passport');
 
-
+//require("./config/db.config");
+require('./config/passport.config');
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
+app.use(logger("dev"));
 
-app.use(logger('dev'));
+//app.use(sessionConfig);
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'hbs');
+app.set("views", __dirname + "/views");
+app.set("view engine", "hbs");
 
-hbs.registerPartials(__dirname + '/views/partials');
+app.use(passport.initialize());
+app.use(passport.session());
 
-const routes = require('./config/routes.config')
-app.use(routes);
+hbs.registerPartials(__dirname + "/views/partials");
+
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
+
+const router = require("./config/routes.config");
+app.use(router);
 
 app.use((err, req, res, next) => {
-    res.render("error", { err });
-  });
-  
-  app.listen(3000, () => console.log("Listening on port 3000"));
+  res.render("error", { err });
+});
+
+app.listen(3000, () => console.log("Listening on port 3000"));
