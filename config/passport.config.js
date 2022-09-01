@@ -17,9 +17,7 @@ passport.deserializeUser((id, next) => {
     .catch((err) => next(err));
 });
 
-passport.use(
-  "local-auth",
-  new LocalStrategy(
+passport.use("local-auth", new LocalStrategy(
     {
       usernameField: "email",
       passwordField: "password",
@@ -28,21 +26,27 @@ passport.use(
       User.findOne({ email })
         .then((user) => {
           if (!user) {
-            next(null, false, { error: "Invalid credentials" });
+            next(null, false, { error: "Identificación incorrecta" });
           } else {
-            return user.checkPassword(password).then((match) => {
+            return user.checkPassword(password)
+            .then((match) => {
               if (!match) {
-                next(null, false, { error: "Invalid credentials" });
+                next(null, false, { error: "Identificación incorrecta" });
               } else {
-                next(null, user);
-              }
-            });
+                if (user.active){
+                next(null, user)
+              } else {
+                next (null, false, { error : "Revisa tu e-mail para activar tu cuenta."})
+            }
           }
         })
-        .catch((err) => next(err));
-    }
-  )
-);
+      }
+    })
+    .catch(err => {
+      next (err)
+    })
+  }
+))
 
 passport.use('google-auth', new GoogleStrategy(
   {
@@ -73,7 +77,8 @@ passport.use('google-auth', new GoogleStrategy(
             googleID,
             password: mongoose.Types.ObjectId(),
             name,
-            image
+            image,
+            active: true
           }).then(createdUser => {
             next(null, createdUser)
           })

@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 
 const EMAIL_PATTERN =
   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 const PASSWORD_PATTERN = /^.{8,}$/i;
 const SALT_ROUNDS = 10;
 
-const { Schema, model } = require("mongoose");
+//const { Schema, model } = require("mongoose");
 
-const userSchema = new Schema({
-  username: {
+const userSchema = new mongoose.Schema({
+  name: {
     type: String,
     required: [true, "Username is required."],
     unique: true,
@@ -19,6 +19,7 @@ const userSchema = new Schema({
     required: [true, "Email is required."],
     unique: true,
     lowercase: true,
+    match: [EMAIL_PATTERN, "Email adress not valid, please try again"]
   },
   password: {
     type: String,
@@ -27,6 +28,19 @@ const userSchema = new Schema({
   },
   googleID: {
     type: String,
+  },
+  active: {
+    type: Boolean,
+    default: false
+  },
+  activationToken: {
+    type: String,
+    default: () => {
+      return Math.random().toString(36).substring(7) +
+      Math.random().toString(36).substring(7) +
+      Math.random().toString(36).substring(7) +
+      Math.random().toString(36).substring(7) 
+    }
   },
   image: {
     type: String,
@@ -39,4 +53,26 @@ const userSchema = new Schema({
   },
 });
 
-module.exports = model("User", userSchema);
+userSchema.pre("save", function (next) {
+  const user = this;
+
+  if (user.isModified("password")) {
+    bcrypt
+      .hash(user.password, SALT_ROUNDS)
+      .then((hash) => {
+        user.password = hash;
+        next();
+      })
+      .catch((err) => next(err));
+  } else {
+    next();
+  }
+});
+userSchema.methods.checkPassword = function (password) {
+  const user = this;
+  return bcrypt.compare(password, user.password);
+};
+
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;

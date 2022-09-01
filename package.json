@@ -2,7 +2,7 @@
   "name": "bird-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/Who-s-that-bird/app-who-s-that-bird.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Idoia FForero, Mercedes Jurado",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Who-s-that-bird/app-who-s-that-bird/issues"

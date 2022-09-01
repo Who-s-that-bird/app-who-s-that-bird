@@ -6,7 +6,7 @@ const sessionMaxAge = process.env.SESSION_AGE || 7; // days
 
 const sessionConfig = expressSession({
   secret: process.env.COOKIE_SECRET || "Super secret (change it!)",
-  resave: true,
+  resave: false, // estaba ne true, lo he cambiado a false 
   saveUninitialized: false,
   cookie: {
     secure: process.env.COOKIE_SECURE === "true" || false,

@@ -1,6 +1,7 @@
-const User = require("../models/user.model");
+const User = require("../models/User.model");
 const mongoose = require("mongoose");
 const passport = require('passport');
+const mailer = require ("../config/mailer.config")
 
 module.exports.register = (req, res, next) => {
   res.render("auth/register");
@@ -16,10 +17,11 @@ module.exports.doRegister = (req, res, next) => {
   User.findOne({ email: user.email })
     .then((userFound) => {
       if (userFound) {
-        renderWithErrors("Email already exist");
+        renderWithErrors("El e-mail ya existe");
       } else {
         return User.create(user).then((userCreated) => {
-          res.redirect("/profile");
+          mailer.sendActivationMail(userCreated.email, userCreated.activationToken)
+          res.redirect("/login");
         });
       }
     })
@@ -32,7 +34,7 @@ module.exports.doRegister = (req, res, next) => {
     });
 };
 
-const login = (req, res, next, provider) => {
+const passportlogin = (req, res, next, provider) => {
   passport.authenticate(provider || 'local-auth', (err, user, validations) => {
     if (err) {
       next(err)
@@ -55,13 +57,33 @@ module.exports.login = (req, res, next) => {
 };
 
 module.exports.doLogin = (req, res, next) => {
-  login(req, res, next);
+  passportlogin(req, res, next);
 };
 
 module.exports.doLoginGoogle = (req, res, next) => {
-  login(req, res, next, 'google-auth')
+  passportlogin(req, res, next, 'google-auth')
 };
 
 module.exports.logout = (req, res, next) => {
   req.logout(() => res.redirect("/login"));
 };
+
+module.exports.activateAccount = (req, res, next) => {
+  const token = req.params.token;
+
+  User.findOneAndUpdate(
+    { activationToken: token, active: false },
+    { active: true }
+  )
+    .then((user) => {
+      if (user) {
+        res.render("auth/login", {
+          user: { email: user.email },
+          message: "You have activated your account. Thanks for joining!"
+        })
+      } else {
+        res.redirect("/login")
+      }
+    })
+    .catch(next)
+}

@@ -1,15 +1,17 @@
+require("dotenv").config();
+
 const express = require("express");
 const logger = require("morgan");
 const hbs = require("hbs");
 const sessionConfig = require("./config/session.config");
 const passport = require("passport");
 
-require("dotenv").config();
+
 
 require("./config/db.config");
 require("./config/passport.config");
 
-//require("dotenv").config();
+
 require("./config/db.config");
 
 const app = express();

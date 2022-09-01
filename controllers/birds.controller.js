@@ -1,4 +1,5 @@
 const createError = require ("http-errors")
+
 //CRUD
 
 const Bird = require("../models/Bird.model")
@@ -20,10 +21,16 @@ module.exports.details = (req, res, next) => {
     console.log(id, "imprime el log del controlador, pero no entra en el then")
     .then((bird) =>{
         console.log("he entrado al then")
+        console.log(bird)
         res.render("birds/birdDetails", { bird });
     })
     .catch((err)=>{
-        console.error(err)
         next(createError( 404, "Registro no encontrado"))
     })
 }
+
+//CREATE
+
+//UPDATE /EDIT
+
+//DELETE
