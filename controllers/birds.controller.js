@@ -12,6 +12,7 @@ module.exports.list = (req, res, next) => {
     .catch((err)=> next(err))
 }
 
+
 module.exports.details = (req, res, next) => {
     const { id } = req.params;
 
@@ -19,11 +20,10 @@ module.exports.details = (req, res, next) => {
     console.log(id, "imprime el log del controlador, pero no entra en el then")
     .then((bird) =>{
         console.log("he entrado al then")
-        res.render("birds/birdDetails", { bird })
+        res.render("birds/birdDetails", { bird });
     })
     .catch((err)=>{
         console.error(err)
         next(createError( 404, "Registro no encontrado"))
     })
 }
-
