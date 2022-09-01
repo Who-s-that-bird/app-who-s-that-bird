@@ -1,20 +1,29 @@
 <h1>Listado de aves</h1>
 
 
-
-  {{#each birds as |bird|}}
-    <div class="card" style="width: 18rem;">
+<div class="backcontainer row row-cols-4 " >
+  {{#each birds as |bird| }}
+  
+    <div class="card rounded" style="width: 18rem;  ">
       <img
         src="{{bird.image}}"
-        class="card-img-top"
+        class="card-img-top mt-4  rounded-circle"
         alt="{{bird.name}}"
         width="600"
       />
       <div class="card-body">
         <h3 class="card-title">{{bird.name}}</h3>
         
-        <a href="/bird/{{bird._id}}" class="btn btn-primary">Ver detalles</a>
+        <a href="/bird/{{bird._id}}" class="btn btn-primary mt-4">Ver detalles</a>
       </div>
     </div>
+   
   {{/each}}
+  </div>
 
+<!--hacer un script xa ordenar por orden alfabético las cartas
+
+<script> bird.sort()</script> 
+
+
+-->

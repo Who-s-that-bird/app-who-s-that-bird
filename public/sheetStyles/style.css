@@ -12,5 +12,18 @@ h1{
 .card{
     margin-left: 6%;
     margin-bottom: 1rem;
+    background-image: url("https://res.cloudinary.com/merjur/image/upload/v1662074637/birdApp/IMG_20160907_115037_zdizca.jpg") ;
+    
+   
 }
 
+.backcontainer{
+   padding-top: 3rem;
+   background-image: url("https://res.cloudinary.com/merjur/image/upload/v1662074637/birdApp/IMG_20160907_115037_zdizca.jpg") ;
+}
+
+.home{
+    background-image: url("https://res.cloudinary.com/merjur/image/upload/v1662075105/birdApp/P1010037_uqo6bb.jpg");
+   
+}
+    
