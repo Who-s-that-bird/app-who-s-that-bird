@@ -118,6 +118,56 @@
         "wingspan" : "de 22 a 24 cms",
         "longevity" : "de 2 a 3 años",
         "image": "https://res.cloudinary.com/merjur/image/upload/v1661790457/birdApp/carbonero%20comun/DSCN5836_awnkhi.jpg" 
-    }    
+    },
+    {
+        "name":"Mito Común",
+        "scifyName": "Aegithalos Caudatus",
+        "comment": "Sedentario, cría en zonas arboladas de caducifolios y bosques mixtos, con sotobosque abundante. Se desplaza en pequeños grupos familiares muy rápidamente. Permite observaciones muy fugaces. Es muy pequeño, con más longitud de cola que de cuerpo. Una mancha blanca le recorre desde la frente a la nuca por el píleo",
+        "weight" : "de 7 a 10 gramos",
+        "size" : "de 13 a 15 cms. Incluyendo de 7 a 9 cms de cola",
+        "wingspan" : "de 18 a 19 cms",
+        "longevity" : "de 2 a 3 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1662070536/birdApp/mito%20comun/DSCN6148_yythwp.jpg" 
+    },
+    {
+        "name":"Papamoscas Cerrojillo",
+        "scifyName": "Ficedula Hypoleuca",
+        "comment": "Ivernan en África occidental, aquí se establece de abril a octubre y cría en bosques maduros caducifolios o mixtos. Es fácilmente diferenciable por las tres líneas blancas que presenta en las alas, en la base de las primarias.",
+        "weight" : "de 9 a 15 gramos",
+        "size" : "de 12 a 13,5 cms",
+        "wingspan" : "24 cms",
+        "longevity" : "puede alcanzar los 5 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1662070845/birdApp/papamoscas%20cerrojillo/DSCN1814_u744nq.jpg" 
+    },
+    {
+        "name":"Reyezuelo Listado",
+        "scifyName": "Regulus Ignicapilla",
+        "comment": "Vive en pinares de alta montaña, pero puede verse en bosques de coníferas e incluso jardines. En invierno suele llegar a visitar lugares de muy escasa altura. Es muy nervioso en sus movimientos. Los adultos muestran una franja desde la frente hacia la nuca, muy llamativa y es eréctil.",
+        "weight" : " de 4 a 7 gramos",
+        "size" : "de 9 a 10 cms",
+        "wingspan" : "de 13 a 16 cms",
+        "longevity" : "hasta 3 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1662071117/birdApp/reyezuelo%20listado/REYEZUELO_LISTADO_5_e5e2kn.jpg" 
+    },
+    {
+        "name":"Zampullín Chico",
+        "scifyName": "Tachybaptus Ruficollis",
+        "comment": "Es el zampullín más pequeño. Cría en humedales con vegetación en sus orillas. Buen buceador, tiene un cuerpo regordete, el píleo redondeado y una caraterística comisura amarilla.",
+        "weight" : "unos 200 gramos",
+        "size" : "de 24 a 29 cms",
+        "wingspan" : "de 40 a 45 cms",
+        "longevity" : "de 10 a 15 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1662071358/birdApp/Zampull%C3%ADn%20chico/Zampull%C3%ADn_chico_1_c5wlas.jpg" 
+    },
+    {
+        "name":"Zampullín Cuellinegro",
+        "scifyName": "Podiceps Nigricollis",
+        "comment": "Presenta un capirote completo, y un píleo ligeramente apuntado, una mancha oscura sobre la mejilla y un collar claro. El pico es muy fino y puntiagudo. Es un ave buceadora. En verano presentan unas plumas amarillas que parten hacia atrás desde los ojos. En España es ave invernante.",
+        "weight" : "de 265 a 450 gramos",
+        "size" : "de 28 a 34 cms",
+        "wingspan" : "de 56 a 60 cms",
+        "longevity" : "entre 10 y 15 años",
+        "image": "https://res.cloudinary.com/merjur/image/upload/v1662071503/birdApp/zampull%C3%ADn%20cuellinegro/ZAMPULL%C3%8DN_CUELLINEGRO_kpislu.jpg" 
+    }            
 ]
 

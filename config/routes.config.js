@@ -31,7 +31,7 @@ router.get("/profile", authMiddlewares.isAuthenticated, usersController.profile)
 
 
 //BIRDS
-router.get("/birds/list", birdsController.list)
+router.get("/birdslist", birdsController.list)
 router.get("/bird/:id", birdsController.details)
 
 
