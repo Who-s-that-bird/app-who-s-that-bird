@@ -44,6 +44,24 @@ h1{
    justify-content: space-evenly;
 }
 
+.total-detail-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.galery-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.title-galery{
+    margin-left: 16rem;
+    margin-top: 3rem;
+}
+.carrusel{
+    background-color: aqua;
+}
+
 
    
     

@@ -33,6 +33,7 @@ router.get("/profile", authMiddlewares.isAuthenticated, usersController.profile)
 //BIRDS
 router.get("/birdslist", birdsController.list)
 router.get("/bird/:id", birdsController.birdDetail)
+router.get("/bird/:id/total", birdsController.birdDetailTotal)
 
 
 module.exports = router;

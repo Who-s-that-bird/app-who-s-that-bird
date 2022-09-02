@@ -25,6 +25,17 @@ module.exports.birdDetail = (req, res, next) => {
     ))
 }
 
+module.exports.birdDetailTotal = (req, res, next) => {
+    const { id } = req.params
+    Bird.findById(id)
+    .then((bird) => {
+        console.log( id, bird);
+        res.render("birds/birdDetailTotal", {bird})
+    })
+    .catch((err)=> next (createError ( 404, " Ave no encontrada")
+    ))
+}
+
 
 //CREATE
 
