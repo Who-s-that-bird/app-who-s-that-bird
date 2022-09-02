@@ -24,6 +24,26 @@ h1{
 
 .home{
     background-image: url("https://res.cloudinary.com/merjur/image/upload/v1662075105/birdApp/P1010037_uqo6bb.jpg");
+    max-width: 80%;
+   margin-top: 3rem;
+   margin-left: 8rem;
+   color: white;
+
    
 }
+.home-text{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.detail-total{
+    display: flex;
+    flex-direction: row;
+    margin-top: 6rem;
+   justify-items: center;
+   justify-content: space-evenly;
+}
+
+
+   
     

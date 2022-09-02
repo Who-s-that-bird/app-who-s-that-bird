@@ -13,21 +13,18 @@ module.exports.list = (req, res, next) => {
     .catch((err)=> next(err))
 }
 
-
-module.exports.details = (req, res, next) => {
+module.exports.birdDetail = (req, res, next) => {
     const { id } = req.params;
 
     Bird.findById(id)
-    console.log(id, "imprime el log del controlador, pero no entra en el then")
-    .then((bird) =>{
-        console.log("he entrado al then")
-        console.log(bird)
-        res.render("birds/birdDetails", { bird });
+    .then((bird) => {
+        console.log( id, bird);
+        res.render("birds/birdDetails", {bird})
     })
-    .catch((err)=>{
-        next(createError( 404, "Registro no encontrado"))
-    })
+    .catch((err)=> next (cretaeError ( 404, " Ave no encontrada")
+    ))
 }
+
 
 //CREATE
 
