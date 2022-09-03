@@ -17,12 +17,16 @@
             <a class="nav-link btn btn-danger text-white" aria-current="page" href="/logout">Logout</a>
           </li>
             {{else}}
+               <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/birdslist">Listado de Aves</a>
+        </li>
         <li class="nav-item ms-4">
             <a class="nav-link btn btn-secondary text-white" aria-current="page" href="/login">Log-in</a>
         </li>
         <li class="nav-item ms-2">
             <a class="nav-link btn btn-primary text-white" aria-current="page" href="/register">Registro</a>
         </li>
+      
          {{/if}}
       </ul>
     </div>
