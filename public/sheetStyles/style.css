@@ -61,7 +61,10 @@ h1{
 .carrusel{
     background-color: aqua;
 }
-
+.small{
+    text-decoration: none;
+    margin-top: 1rem;
+}
 
    
     

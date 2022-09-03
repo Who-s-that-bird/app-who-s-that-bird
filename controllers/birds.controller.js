@@ -7,8 +7,9 @@ const Bird = require("../models/Bird.model")
 //READ
 module.exports.list = (req, res, next) => {
     Bird.find()
+    .sort({name: 1})
     .then((birds) => {
-        res.render("birds/list", {birds})
+       res.render("birds/list", {birds})
     })
     .catch((err)=> next(err))
 }

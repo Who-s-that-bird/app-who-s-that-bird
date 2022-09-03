@@ -1,3 +1,4 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const Bird = require ("../models/Bird.model")
 const BIRD = require("../data/bird.json")
