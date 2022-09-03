@@ -22,7 +22,7 @@ module.exports.birdDetail = (req, res, next) => {
         console.log( id, bird);
         res.render("birds/birdDetails", {bird})
     })
-    .catch((err)=> next (cretaeError ( 404, " Ave no encontrada")
+    .catch((err)=> next (createError ( 404, " Ave no encontrada")
     ))
 }
 
@@ -39,6 +39,21 @@ module.exports.birdDetailTotal = (req, res, next) => {
 
 
 //CREATE
+
+module.exports.create = (req, res, next) => {
+    res.render("birds/birdCreate");
+  }
+  
+  module.exports.doCreate = (req, res, next) => {
+    Bird.create(req.body)
+      .then((bird) => {
+        res.redirect(`birds/birdDetails`);
+      })
+      .catch((err) => {
+        console.error(err);
+        next(err);
+      });
+    }
 
 //UPDATE /EDIT
 

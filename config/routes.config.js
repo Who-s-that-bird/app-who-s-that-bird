@@ -34,6 +34,8 @@ router.get("/profile", authMiddlewares.isAuthenticated, usersController.profile)
 router.get("/birdslist", birdsController.list)
 router.get("/bird/:id", birdsController.birdDetail)
 router.get("/bird/:id/total", authMiddlewares.isAuthenticated, birdsController.birdDetailTotal)
+router.get("/birds/birdCreate", authMiddlewares.isAuthenticated, birdsController.create);
+router.post("/birds/birdCreate", authMiddlewares.isAuthenticated, birdsController.doCreate);
 
 
 module.exports = router;
