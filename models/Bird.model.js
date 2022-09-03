@@ -29,9 +29,13 @@ const birdSchema = new mongoose.Schema ({
         type: String,
         required: [true, "A picture is required"]
     },
+    albums: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Bird",
+        required: [true, "Especie requerida"],
+    }
 })
 
 const Bird = mongoose.model("Bird", birdSchema);
 
 module.exports = Bird;
-   
