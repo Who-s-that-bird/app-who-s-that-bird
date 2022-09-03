@@ -32,7 +32,6 @@ const birdSchema = new mongoose.Schema ({
     albums: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Bird",
-        required: [true, "Especie requerida"],
     }
 })
 
