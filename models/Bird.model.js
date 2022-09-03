@@ -28,10 +28,6 @@ const birdSchema = new mongoose.Schema ({
     image: {
         type: String,
         required: [true, "A picture is required"]
-    },
-    albums: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Bird",
     }
 })
 
