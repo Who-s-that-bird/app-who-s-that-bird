@@ -64,10 +64,6 @@ module.exports.doCreate = (req, res, next) => {
     .catch((err) => {
       next(err);
     });
-
-  // uploadCloud(req.body.image)
-  //   .then(result => console.log(result))
-  //   .catch(error => console.log(error))
 };
 
 //UPDATE /EDIT
