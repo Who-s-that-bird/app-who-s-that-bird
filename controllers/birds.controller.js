@@ -1,69 +1,74 @@
-const createError = require ("http-errors")
-const uploadCloud = require("../config/cloudinary.config")
+const createError = require("http-errors");
+const uploadCloud = require("../config/cloudinary.config");
 
 //CRUD
 
-const Bird = require("../models/Bird.model")
+const Bird = require("../models/Bird.model");
 
 //READ
 module.exports.list = (req, res, next) => {
-    Bird.find()
-    .sort({name: 1})
+  Bird.find()
+    .sort({ name: 1 })
     .then((birds) => {
-       res.render("birds/list", {birds})
+      res.render("birds/list", { birds });
     })
-    .catch((err)=> next(err))
-}
+    .catch((err) => next(err));
+};
 
 module.exports.birdDetail = (req, res, next) => {
-    const { id } = req.params;
+  const { id } = req.params;
 
-    Bird.findById(id)
+  Bird.findById(id)
     .populate("albums")
     .then((bird) => {
-        console.log( id, bird);
-        res.render("birds/birdDetails", {bird})
+      console.log(id, bird);
+      res.render("birds/birdDetails", { bird });
     })
-    .catch((err)=> next (createError ( 404, " Ave no encontrada")
-    ))
-}
+    .catch((err) => {
+      console.log(err)
+      next(createError(404, " Ave no encontrada"))
+    });
+};
 
 module.exports.birdDetailTotal = (req, res, next) => {
-    const { id } = req.params
-    Bird.findById(id)
+  const { id } = req.params;
+  Bird.findById(id)
     .then((bird) => {
-        console.log( id, bird);
-        res.render("birds/birdDetailTotal", {bird})
+      console.log(id, bird);
+      res.render("birds/birdDetailTotal", { bird });
     })
-    .catch((err)=> next (createError ( 404, " Ave no encontrada")
-    ))
-}
-
+    .catch((err) => next(createError(404, " Ave no encontrada")));
+};
 
 //CREATE
 
 module.exports.create = (req, res, next) => {
-    res.render("birds/birdCreate");
+  res.render("birds/birdCreate");
+};
+
+module.exports.doCreate = (req, res, next) => {
+  const birdToCreate = req.body;
+
+  if (req.file) {
+    birdToCreate.image = req.file.path;
   }
-  
-  module.exports.doCreate = (req, res, next) => {
-    // TODO subir imagen a cloudinary, pasando de que pajaro esç
-    uploadCloud(req.body.image)
-      .then(result => console.log(result))
-      .catch(error => console.log(error))
-    // recuperar URL de la imagen subida y cambiarlo en req.body.image = URL de la imagen subida
-    /*
-    Bird.create(req.body)
-    console.log(req.body)
-      .then((bird) => {
-        res.redirect(`birds/birdDetails`);
-      })
-      .catch((err) => {
-        console.error(err);
-        next(err);
-      });
-      */
-    }
+
+  birdToCreate.user = req.user._id
+
+  console.log(birdToCreate);
+
+  Bird.create(birdToCreate)
+    .then((bird) => {
+      res.redirect(`/bird/${bird._id}`);
+    })
+    .catch((err) => {
+      next(err);
+    });
+
+  // uploadCloud(req.body.image)
+  //   .then(result => console.log(result))
+  //   .catch(error => console.log(error))
+};
 
 //UPDATE /EDIT
 

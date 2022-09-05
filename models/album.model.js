@@ -3,21 +3,23 @@ const Bird = require("./Bird.model");
 
 const albumSchema = new mongoose.Schema(
   {
-    name: {
-        type: String, 
-        required: [true, "Name is required"],
+    user: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "User",
     },
+  
+  bird:{
+       type: mongoose.Schema.Types.ObjectId, 
+        ref: "Bird",
   },
-  {
-    toObject: { virtuals: true },
-  },
-  {
-      type: [Bird],
-      required: [true, "A picture is required"]
+
+  url: {
+    type: [String]
+
   }
-);
+},
 );
 
-const Album = mongoose.model("Album", albumSchema);
+const Album = mongoose.model("Album", albumSchema); 
 
 module.exports = Album;
