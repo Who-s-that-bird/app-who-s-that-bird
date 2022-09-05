@@ -30,6 +30,14 @@ const birdSchema = new mongoose.Schema ({
         required: [true, "A picture is required"]
     }
 })
+    
+birdSchema.virtual("albums", {
+    ref: "Album",
+    localField: "_id",
+    foreignField: "bird",
+    justOne: false,
+  }
+)
 
 const Bird = mongoose.model("Bird", birdSchema);
 

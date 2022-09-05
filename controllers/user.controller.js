@@ -1,5 +1,10 @@
 const User = require("../models/User.model");
+const Album = require("../models/Bird.model")
 
 module.exports.profile = (req, res, next) => {
-  res.render("users/profile");
+  Album.find({user:req.currentUser._id})
+  .then(albums => {
+    res.render("users/profile", {albums});
+  })
+  
 };

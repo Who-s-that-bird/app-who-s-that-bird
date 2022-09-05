@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Bird = require("./Bird.model");
 
 const albumSchema = new mongoose.Schema(
   {
@@ -9,15 +10,13 @@ const albumSchema = new mongoose.Schema(
   },
   {
     toObject: { virtuals: true },
+  },
+  {
+      type: [Bird],
+      required: [true, "A picture is required"]
   }
 );
-
-albumSchema.virtual("birds", {
-  ref: "Bird",
-  localField: "_id",
-  foreignField: "image",
-  justOne: false,
-});
+);
 
 const Album = mongoose.model("Album", albumSchema);
 

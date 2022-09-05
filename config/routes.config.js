@@ -24,11 +24,8 @@ router.get('/activate/:token', authMiddlewares.isNotAuthenticated, authControlle
 router.get('/login/google', authMiddlewares.isNotAuthenticated, passport.authenticate('google-auth', { scope: SCOPES  }));
 router.get('/auth/google/callback', authMiddlewares.isNotAuthenticated, authController.doLoginGoogle);
 
-
 // USERS
 router.get("/profile", authMiddlewares.isAuthenticated, usersController.profile);
-
-
 
 //BIRDS
 router.get("/birdslist", birdsController.list)
@@ -36,6 +33,5 @@ router.get("/bird/:id", birdsController.birdDetail)
 router.get("/bird/:id/total", authMiddlewares.isAuthenticated, birdsController.birdDetailTotal)
 router.get("/birds/birdCreate", authMiddlewares.isAuthenticated, birdsController.create);
 router.post("/birds/birdCreate", authMiddlewares.isAuthenticated, birdsController.doCreate);
-
 
 module.exports = router;
