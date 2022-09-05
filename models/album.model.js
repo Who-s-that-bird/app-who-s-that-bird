@@ -1,21 +1,21 @@
 const mongoose = require("mongoose");
 const Bird = require("./Bird.model");
 
-const albumSchema = new mongoose.Schema(
-  {
-    name: {
-        type: String, 
-        required: [true, "Name is required"],
-    },
+const albumSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
   },
-  {
-    toObject: { virtuals: true },
+
+  bird: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Bird",
   },
-  {
-      type: [Bird],
-      required: [true, "A picture is required"]
-  }
-);
+
+  url: {
+    type: [String],
+  },
+});
 
 const Album = mongoose.model("Album", albumSchema);
 

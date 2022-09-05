@@ -2,7 +2,7 @@
   <div class="col col-sm-8 col-md-6 col-lg-4">
     <h1 class="my-4">Añade una especie</h1>
 
-    <form action="/birds/birdCreate" method="post" class="">
+    <form action="/birds/birdCreate" method="post" class=""enctype="multipart/form-data">
       <div class="input-group mb-2">
         <input
           type="text"
@@ -17,7 +17,7 @@
       <div class="input-group mb-2">
         <input
           type="text"
-          name="Scientific Name"
+          name="scifyName"
           class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
           placeholder="Scientific Name"
           aria-label="Scientific Name"
@@ -28,7 +28,7 @@
       <div class="input-group mb-2">
         <input
           type="text"
-          name="Comment"
+          name="comment"
           class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
           placeholder="Comment"
           aria-label="Comment"
@@ -39,7 +39,7 @@
       <div class="input-group mb-2">
         <input
           type="text"
-          name="Weight"
+          name="weight"
           class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
           placeholder="Weight"
           aria-label="Weight"
@@ -50,7 +50,7 @@
      <div class="input-group mb-2">
         <input
           type="text"
-          name="Size"
+          name="size"
           class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
           placeholder="Size"
           aria-label="Size"
@@ -61,7 +61,7 @@
        <div class="input-group mb-2">
         <input
           type="text"
-          name="Wingspam"
+          name="wingspam"
           class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
           placeholder="Wingspam"
           aria-label="Wingspam"
@@ -83,7 +83,7 @@
         
      <div class="mb-3">
         <label for="formFile" class="form-label">Añade foto de perfil del ave</label>
-        <input class="form-control" type="file" id="formFile">
+        <input class="form-control" type="file" id="formFile" name="image">
         {{#if error}}<div class="text-danger text-center mb-2">{{ error }}</div>{{/if}}
      </div>
       <div class="input-group mb-2">

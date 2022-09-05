@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require('./album.model')
 
 const birdSchema = new mongoose.Schema ({
     name: {
@@ -28,6 +29,11 @@ const birdSchema = new mongoose.Schema ({
     image: {
         type: String,
         required: [true, "A picture is required"]
+    },
+    user:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: [true, "An user is required"]
     }
 })
     
