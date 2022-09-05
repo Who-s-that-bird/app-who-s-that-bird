@@ -16,7 +16,6 @@ const albumSchema = new mongoose.Schema(
       required: [true, "A picture is required"]
   }
 );
-);
 
 const Album = mongoose.model("Album", albumSchema);
 
