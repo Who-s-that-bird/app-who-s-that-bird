@@ -5,6 +5,7 @@ const uploadCloud = require("../config/cloudinary.config");
 
 const Bird = require("../models/Bird.model");
 
+
 //READ
 module.exports.list = (req, res, next) => {
   Bird.find()
@@ -54,7 +55,7 @@ module.exports.doCreate = (req, res, next) => {
   }
 
   birdToCreate.user = req.user._id
-
+ 
   console.log(birdToCreate);
 
   Bird.create(birdToCreate)
