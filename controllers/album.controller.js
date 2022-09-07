@@ -30,7 +30,7 @@ module.exports.doCreate = (req, res, next) => {
 
   console.log(albumToCreate);
 
-s  Album.create(albumToCreate)
+  Album.create(albumToCreate)
     .then((album) => {
       res.redirect(`/profile`); //mirar este redirect!
     })
