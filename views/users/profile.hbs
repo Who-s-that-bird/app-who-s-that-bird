@@ -20,9 +20,9 @@
       >Crea un album</a>
     </div>
 
-    {{#each albums}}
-      <img src="{{this.url}}" alt="" />
-      <p>{{this.bird.name}}</p>
-    {{/each}}
+    <div class="galery-container">
+      <h2 class="title-galery">Mis albums</h2>
+       {{>carousel}}
+    </div>
   </div>
 </div>

@@ -1,22 +1,25 @@
 <h1>Detalle {{bird.name}}</h1>
 
 <div class="total-detail-container">
-  <div class="card" style="width: 18rem;">
-    <img
-      src="{{bird.image}}"
-      class="card-img-top"
-      alt="{{bird.name}}"
-      width="600"
-    />
-    <div class="card-body">
-      <h3 class="card-title">Nombre: {{bird.name}}</h3>
-      <h4 class="card-title">Nombre científico: {{bird.scifyName}}</h4>
-      <p class="card-text">{{bird.comment}}</p>
-      <p class="card-text">Peso: {{bird.weight}}</p>
-      <p class="card-text">Tamaño: {{bird.size}}</p>
-      <p class="card-text">Envergadura: {{bird.wingspan}}</p>
-      <p class="card-text">Longevidad: {{bird.longevity}}</p>
+  <div class="column">
+    <div class="card" style="width: 18rem;">
+      <img
+        src="{{bird.image}}"
+        class="card-img-top"
+        alt="{{bird.name}}"
+        width="600"
+      />
+      <div class="card-body">
+        <h3 class="card-title">Nombre: {{bird.name}}</h3>
+        <h4 class="card-title">Nombre científico: {{bird.scifyName}}</h4>
+        <p class="card-text">{{bird.comment}}</p>
+        <p class="card-text">Peso: {{bird.weight}}</p>
+        <p class="card-text">Tamaño: {{bird.size}}</p>
+        <p class="card-text">Envergadura: {{bird.wingspan}}</p>
+        <p class="card-text">Longevidad: {{bird.longevity}}</p>
+      </div>
     </div>
+    <a class="volver-al-listado"href="/birdslist">Volver al listado</a>
   </div>
   <div class="galery-container">
     <h2 class="title-galery">Galería de imágenes</h2>
@@ -30,7 +33,11 @@
         <div class="carousel-inner">
           {{#each bird.albums as |image|}}
             <div class="carousel-item active">
-              <img src="{{image.url}}" class="d-block w-100" alt="..." />
+              <img
+                src="{{image.url}}"
+                class="d-block w-100"
+                alt="{{bird.name}}"
+              />
             </div>
           {{/each}}
 
@@ -58,4 +65,3 @@
   </div>
 
 </div>
-<a href="/birdslist">Volver al listado</a>
