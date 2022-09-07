@@ -5,6 +5,7 @@ const authController = require("../controllers/auth.controller");
 const authMiddlewares = require("../middlewares/userMiddleware");
 const usersController = require("../controllers/user.controller");
 const birdsController = require("../controllers/birds.controller");
+const albumController = require("../controllers/album.controller");
 const fileUploader = require("../config/cloudinary.config");
 
 const SCOPES = [ "profile", "email"]
@@ -28,11 +29,16 @@ router.get('/auth/google/callback', authMiddlewares.isNotAuthenticated, authCont
 // USERS
 router.get("/profile", authMiddlewares.isAuthenticated, usersController.profile);
 
+
 //BIRDS
 router.get("/birdslist", birdsController.list)
 router.get("/bird/:id", birdsController.birdDetail)
 router.get("/bird/:id/total", authMiddlewares.isAuthenticated, birdsController.birdDetailTotal)
 router.get("/birds/birdCreate", authMiddlewares.isAuthenticated, birdsController.create);
 router.post("/birds/birdCreate", authMiddlewares.isAuthenticated, fileUploader.single("image"), birdsController.doCreate);
+
+//ALBUM
+router.get("/albums/albumCreate", albumController.create);
+router.post("/albums", albumController.doCreate);
 
 module.exports = router;
