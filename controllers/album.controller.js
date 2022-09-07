@@ -2,7 +2,6 @@ const createError = require("http-errors");
 const uploadCloud = require("../config/cloudinary.config");
 
 //CRUD
-
 const Album = require("../models/album.model");
 
 //Read
@@ -31,7 +30,7 @@ module.exports.doCreate = (req, res, next) => {
 
   console.log(albumToCreate);
 
-  Album.create(albumToCreate)
+s  Album.create(albumToCreate)
     .then((album) => {
       res.redirect(`/profile`); //mirar este redirect!
     })
