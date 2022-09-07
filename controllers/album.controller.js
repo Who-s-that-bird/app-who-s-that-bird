@@ -14,18 +14,23 @@ module.exports.list = (req, res, next) => {
     })
     .catch((err) => next(err));
 };
+
 //Create
 module.exports.create = (req, res, next) => {
   res.render("albums/albumCreate");
 };
+
 module.exports.doCreate = (req, res, next) => {
   const albumToCreate = req.body;
+
   if (req.file) {
     albumToCreate.url = req.file.path;
   }
   albumToCreate.user = req.user._id;
+
   console.log(albumToCreate);
-  Album.create(albumToCreate)
+
+s  Album.create(albumToCreate)
     .then((album) => {
       res.redirect(`/profile`); //mirar este redirect!
     })
@@ -33,5 +38,7 @@ module.exports.doCreate = (req, res, next) => {
       next(err);
     });
 };
+
 //Edit
+
 //Delete
