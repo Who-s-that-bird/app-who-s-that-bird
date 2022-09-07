@@ -1,37 +1,42 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const Bird = require("../models/Bird.model")
-const BIRD = require("../data/bird.json")
-const Album = require("../models/album.model")
-const ALBUM = require("../data/carrousel.json")
+const Bird = require("../models/Bird.model");
+const BIRDS = require("../data/bird.json");
+const User = require("../models/user.model")
 
-require("../config/db.config")
+require("../config/db.config");
 
 mongoose.connection.once("open", () => {
-    mongoose.connection.db
+  mongoose.connection.db
     .dropDatabase()
-    .then(()=>{
-        console.log("DB dropped!")
+    .then(() => {
+      console.log("DB dropped!");
+     
 
-        const seedsPromises = [Bird.create(BIRD), Album.create(ALBUM)];
-        console.log(seedsPromises)
-        
-
-        return seedsPromises
+      return User.create({
+        name: "Pedro Jurado",
+        email: "newbirdsapp@gmail.com",
+        password: "registered",
+        active: "true",
+        isAdmin: "true"
+      })
     })
-    .then ((createdSeeds) => {
-        console.log("calling birds and albums ...........................🌍🌎🌏")
-        createdSeeds.forEach((x) => console.log(`${x.name}  ${x.user._id} was created...... 🦅🦅🦅!`)
-        
-        )
-        return mongoose.connection.close()
+    .then((user) => {
+      console.log('user created', user)
+      BIRDS.map(bird =>{ 
+        bird.user = user._id
+        return bird
+      })
+      console.log(BIRDS)
+      return Bird.create(BIRDS)
     })
-    .then(()=> {
-        console.log("connection closed")
-        process.exit(1)
+    .then((Birds) => {
+      console.log('Birds wit .user._id created.......................', Birds)
+      console.log("connection closed");
+      process.exit(1);
     })
     .catch((err) => {
-        console.error(err)
-        process.exit(0)
-    })
-})
+      console.error(err);
+      process.exit(0);
+    });
+});

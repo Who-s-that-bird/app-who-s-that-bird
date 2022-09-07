@@ -8,7 +8,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js -e hbs,css,js",
     "seeds": "node ./bin/birdsSeeds.js",
-    "BAseeds": "node ./bin/birdsSeeds.js"
+    "BAseeds": "node ./bin/birdsUserSeeds.js"
   },
   "repository": {
     "type": "git",
