@@ -13,7 +13,7 @@ const albumSchema = new mongoose.Schema({
   },
 
   url: {
-    type: [String],
+    type: String,
   },
 });
 
