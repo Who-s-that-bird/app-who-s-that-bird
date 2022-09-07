@@ -23,7 +23,7 @@
     <div>
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="background-color:blue;">
         <div class="carousel-inner">
-         {{#each bird.imageList as |image|}}
+         {{#each album.url as |image|}}
           <div class="carousel-item active">
             <img src="{{image}}" class="d-block w-100" alt="..." />
           </div>
@@ -37,7 +37,7 @@
           data-bs-slide="prev"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span class="visually-hidden">Previa</span>
         </button>
         <button
           class="carousel-control-next"
@@ -46,7 +46,7 @@
           data-bs-slide="next"
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span class="visually-hidden">Próxima</span>
         </button>
       </div>
     </div>
