@@ -5,7 +5,6 @@ const uploadCloud = require("../config/cloudinary.config");
 
 const Bird = require("../models/Bird.model");
 
-
 //READ
 module.exports.list = (req, res, next) => {
   Bird.find()
@@ -26,14 +25,15 @@ module.exports.birdDetail = (req, res, next) => {
       res.render("birds/birdDetails", { bird });
     })
     .catch((err) => {
-      console.log(err)
-      next(createError(404, " Ave no encontrada"))
+      console.log(err);
+      next(createError(404, " Ave no encontrada"));
     });
 };
 
 module.exports.birdDetailTotal = (req, res, next) => {
   const { id } = req.params;
   Bird.findById(id)
+    .populate("albums")
     .then((bird) => {
       console.log(id, bird);
       res.render("birds/birdDetailTotal", { bird });
@@ -54,8 +54,8 @@ module.exports.doCreate = (req, res, next) => {
     birdToCreate.image = req.file.path;
   }
 
-  birdToCreate.user = req.user._id
- 
+  birdToCreate.user = req.user._id;
+
   console.log(birdToCreate);
 
   Bird.create(birdToCreate)

@@ -1,15 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="col text-center mt-4">
-      <img src={{currentUser.image}} class="rounded-circle border border-3 m-4" width="200" alt={{currentUser.name}} referrerpolicy="no-referrer">
+      <img
+        src={{currentUser.image}}
+        class="rounded-circle border border-3 m-4"
+        width="200"
+        alt={{currentUser.name}}
+        referrerpolicy="no-referrer"
+      />
       <h2>Hi {{currentUser.name}}, welcome to your profile!</h2>
-      <hr class="my-4">
-      <a href="/birds/birdCreate" class="btn btn-primary bg-light-green border-0">Añade una nueva especie</a>
-      <a href="/albums/albumCreate" class="btn btn-primary bg-light-green border-0">Crea un album</a>
+      <hr class="my-4" />
+      <a
+        href="/birds/birdCreate"
+        class="btn btn-primary bg-light-green border-0"
+      >Añade una nueva especie</a>
+      <a
+        href="/albums/albumCreate"
+        class="btn btn-primary bg-light-green border-0"
+      >Crea un album</a>
     </div>
 
     {{#each albums}}
-      <img src="{{this.url}}" alt="">
+      <img src="{{this.url}}" alt="" />
+      <p>{{this.bird.name}}</p>
     {{/each}}
   </div>
 </div>

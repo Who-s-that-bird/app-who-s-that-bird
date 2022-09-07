@@ -21,14 +21,19 @@
   <div class="galery-container">
     <h2 class="title-galery">Galería de imágenes</h2>
     <div>
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="background-color:blue;">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        style="background-color:blue;"
+      >
         <div class="carousel-inner">
-         {{#each album.url as |image|}}
-          <div class="carousel-item active">
-            <img src="{{image}}" class="d-block w-100" alt="..." />
-          </div>
+          {{#each bird.albums as |image|}}
+            <div class="carousel-item active">
+              <img src="{{image.url}}" class="d-block w-100" alt="..." />
+            </div>
           {{/each}}
-       
+
         </div>
         <button
           class="carousel-control-prev"
