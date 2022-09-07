@@ -6,5 +6,9 @@
       <hr class="my-4">
       <a href="/birds/birdCreate" class="btn btn-primary bg-light-green border-0">Añade una nueva especie</a>
     </div>
+
+    {{#each albums}}
+      <img src="{{this.url}}" alt="">
+    {{/each}}
   </div>
 </div>

@@ -31,7 +31,7 @@ mongoose.connection.once("open", () => {
       return Bird.create(BIRDS)
     })
     .then((Birds) => {
-      console.log('Birds wit .user._id created.......................', Birds)
+      console.log('Birds with user._id created.......................', Birds)
       console.log("connection closed");
       process.exit(1);
     })
