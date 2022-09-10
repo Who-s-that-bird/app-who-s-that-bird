@@ -1,0 +1,35 @@
+<div class="row justify-content-center mt-4">
+  <div class="col col-sm-8 col-md-6 col-lg-4">
+    <h1 class="my-4">{{album.bird}}</h1>
+
+    <form action="/photos" method="POST" class="" enctype="multipart/form-data">
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        name="bird"
+        required
+      >
+        <option disabled selected>Open this select menu</option>
+        {{#each albums as |album|}}
+          <option value="{{bird.id}}">{{bird.name}}</option>
+        {{/each}}
+      </select>
+
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Añade foto</label>
+        <input class="form-control" type="file" id="formFile" name="image" />
+        {{#if error}}<div
+            class="text-danger text-center mb-2"
+          >{{error}}</div>{{/if}}
+      </div>
+      <div class="input-group mb-2">
+        <button
+          type="submit"
+          class="btn btn-primary bg-light-green border-0"
+        >Añadir</button>
+      </div>
+      <s style="text-decoration: none;">* Todo el material subido, será revisado
+        por el administrador.</s>
+    </form>
+  </div>
+</div>
