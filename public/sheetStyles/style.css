@@ -1,70 +1,65 @@
-h1{
-    margin-left:  6%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+h1 {
+  margin-left: 6%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.icon{
-    margin-left: 3rem;
-    border-radius: 50%;
+.icon {
+  margin-left: 3rem;
+  border-radius: 50%;
 }
 
-.card{
-    margin-left: 6%;
-    margin-bottom: 1rem;
-    background-image: url("https://res.cloudinary.com/merjur/image/upload/v1662074637/birdApp/IMG_20160907_115037_zdizca.jpg") ;
-    
-   
+.card {
+  margin-left: 6%;
+  margin-bottom: 1rem;
 }
 
-.backcontainer{
-   padding-top: 3rem;
-   background-image: url("https://res.cloudinary.com/merjur/image/upload/v1662074637/birdApp/IMG_20160907_115037_zdizca.jpg") ;
+.backcontainer {
+  padding-top: 3rem;
 }
 
-.home{
-    background-image: url("https://res.cloudinary.com/merjur/image/upload/v1662075105/birdApp/P1010037_uqo6bb.jpg");
-    max-width: 80%;
-   margin-top: 3rem;
-   margin-left: 8rem;
-   color: white;
-
-   
+.home {
+  max-width: 80%;
+  margin-top: 3rem;
+  margin-left: 8rem;
 }
-.home-text{
-    text-align: center;
-    font-size: 2rem;
+.home-text {
+  text-align: center;
+  font-size: 2rem;
 }
 
-.detail-total{
-    display: flex;
-    flex-direction: row;
-    margin-top: 6rem;
-   justify-items: center;
-   justify-content: space-evenly;
+.detail-total {
+  display: flex;
+  flex-direction: row;
+  margin-top: 6rem;
+  justify-items: center;
+  justify-content: space-evenly;
 }
 
-.total-detail-container{
-    display: flex;
-    flex-direction: row;
+.total-detail-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
 }
 
-.galery-container{
-    display: flex;
-    flex-direction: column;
+.galery-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8rem;
 }
 
-.title-galery{
-    margin-left: 16rem;
-    margin-top: 3rem;
+.title-galery {
+  margin-left: 16rem;
+  margin-bottom: 1rem;
 }
-.carrusel{
-    background-color: aqua;
-}
-.small{
-    text-decoration: none;
-    margin-top: 1rem;
+.small {
+  text-decoration: none;
+  margin-top: 1rem;
 }
 
-   
-    
+.column {
+  margin-left: 10%;
+}
+.volver-al-listado {
+  margin-left: 7rem;
+}

@@ -1,60 +1,31 @@
 <h1>Detalle {{bird.name}}</h1>
 
 <div class="total-detail-container">
-  <div class="card" style="width: 18rem;">
-    <img
-      src="{{bird.image}}"
-      class="card-img-top"
-      alt="{{bird.name}}"
-      width="600"
-    />
-    <div class="card-body">
-      <h3 class="card-title">Nombre: {{bird.name}}</h3>
-      <h4 class="card-title">Nombre científico: {{bird.scifyName}}</h4>
-      <p class="card-text">{{bird.comment}}</p>
-      <p class="card-text">Peso: {{bird.weight}}</p>
-      <p class="card-text">Tamaño: {{bird.size}}</p>
-      <p class="card-text">Envergadura: {{bird.wingspan}}</p>
-      <p class="card-text">Longevidad: {{bird.longevity}}</p>
+  <div class="column">
+    <div class="card" style="width: 18rem;">
+      <img
+        src="{{bird.image}}"
+        class="card-img-top"
+        alt="{{bird.name}}"
+        width="600"
+        style="border-radius: 1rem"
+      />
+      <div class="card-body">
+        <h3 class="card-title">Nombre: {{bird.name}}</h3>
+        <h4 class="card-title">Nombre científico: {{bird.scifyName}}</h4>
+        <p class="card-text">{{bird.comment}}</p>
+        <p class="card-text">Peso: {{bird.weight}}</p>
+        <p class="card-text">Tamaño: {{bird.size}}</p>
+        <p class="card-text">Envergadura: {{bird.wingspan}}</p>
+        <p class="card-text">Longevidad: {{bird.longevity}}</p>
+      </div>
     </div>
+    <a class="volver-al-listado"href="/birdslist">Volver al listado</a>
   </div>
   <div class="galery-container">
     <h2 class="title-galery">Galería de imágenes</h2>
     <div>
-      <div
-        id="carouselExampleControls"
-        class="carousel slide"
-        data-bs-ride="carousel"
-        style="background-color:blue;"
-      >
-        <div class="carousel-inner">
-          {{#each bird.albums as |image|}}
-            <div class="carousel-item active">
-              <img src="{{image.url}}" class="d-block w-100" alt="..." />
-            </div>
-          {{/each}}
-
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previa</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Próxima</span>
-        </button>
-      </div>
-    </div>
+      {{>carousel}}
   </div>
 
   <form class="form-floating" action="/comments/{{bird.id}}" method="post">
