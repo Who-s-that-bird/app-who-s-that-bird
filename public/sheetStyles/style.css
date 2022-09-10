@@ -1,75 +1,65 @@
-h1{
-    margin-left:  6%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+h1 {
+  margin-left: 6%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.icon{
-    margin-left: 3rem;
-    border-radius: 50%;
+.icon {
+  margin-left: 3rem;
+  border-radius: 50%;
 }
 
-.card{
-    margin-left: 6%;
-    margin-bottom: 1rem;
-    
-   
+.card {
+  margin-left: 6%;
+  margin-bottom: 1rem;
 }
 
-.backcontainer{
-   padding-top: 3rem;
+.backcontainer {
+  padding-top: 3rem;
 }
 
-.home{
-    max-width: 80%;
-   margin-top: 3rem;
-   margin-left: 8rem;
-   
-
-   
+.home {
+  max-width: 80%;
+  margin-top: 3rem;
+  margin-left: 8rem;
 }
-.home-text{
-    text-align: center;
-    font-size: 2rem;
+.home-text {
+  text-align: center;
+  font-size: 2rem;
 }
 
-.detail-total{
-    display: flex;
-    flex-direction: row;
-    margin-top: 6rem;
-   justify-items: center;
-   justify-content: space-evenly;
+.detail-total {
+  display: flex;
+  flex-direction: row;
+  margin-top: 6rem;
+  justify-items: center;
+  justify-content: space-evenly;
 }
 
-.total-detail-container{
-    display: flex;
-    flex-direction: row;
-    margin-top: 3%;
+.total-detail-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
 }
 
-.galery-container{
-    display: flex;
-    flex-direction: column;
+.galery-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8rem;
 }
 
-.title-galery{
-    margin-left: 16rem;
-    margin-top: 3rem;
+.title-galery {
+  margin-left: 16rem;
+  margin-bottom: 1rem;
 }
-.carrusel{
-    background-color: aqua;
-}
-.small{
-    text-decoration: none;
-    margin-top: 1rem;
+.small {
+  text-decoration: none;
+  margin-top: 1rem;
 }
 
-.column{
-    margin-left: 10%;
+.column {
+  margin-left: 10%;
 }
-.volver-al-listado{
-    margin-left: 7rem;
+.volver-al-listado {
+  margin-left: 7rem;
 }
-
-   
-    

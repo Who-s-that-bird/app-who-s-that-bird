@@ -38,11 +38,9 @@ router.get(
 );
 
 // USERS
-router.get(
-  "/profile",
-  authMiddlewares.isAuthenticated,
-  usersController.profile
-);
+router.get("/profile", authMiddlewares.isAuthenticated, usersController.profile);
+router.get("/albums/albumDetail", authMiddlewares.isAuthenticated, usersController.album);
+
 
 //BIRDS
 router.get("/birdslist", birdsController.list);

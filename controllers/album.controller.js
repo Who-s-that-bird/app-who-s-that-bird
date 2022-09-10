@@ -5,6 +5,15 @@ const Bird = require("../models/Bird.model");
 //CRUD
 const Album = require("../models/album.model");
 
+
+//List
+module.exports.list = (req, res, next) => {
+  Bird.find().
+  then((albums) => {
+    res.render("partials/album", {albums})
+  })
+}
+
 //Create
 module.exports.create = (req, res, next) => {
   Bird.find().then((birds) => {
@@ -25,7 +34,7 @@ module.exports.doCreate = (req, res, next) => {
 
   Album.create(albumToCreate)
     .then((album) => {
-      res.redirect(`/profile`); //mirar este redirect!
+      res.redirect(`/profile`); 
     })
     .catch((err) => {
       next(err);
