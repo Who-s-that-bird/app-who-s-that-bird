@@ -51,6 +51,13 @@ birdSchema.virtual("albums", {
   justOne: false,
 });
 
+birdSchema.virtual("comments", {
+  ref: "Comment",
+  localField: "_id",
+  foreignField: "bird",
+  justOne: false,
+});
+
 const Bird = mongoose.model("Bird", birdSchema);
 
 module.exports = Bird;

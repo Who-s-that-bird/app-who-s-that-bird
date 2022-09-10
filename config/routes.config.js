@@ -5,7 +5,8 @@ const authController = require("../controllers/auth.controller");
 const authMiddlewares = require("../middlewares/userMiddleware");
 const usersController = require("../controllers/user.controller");
 const birdsController = require("../controllers/birds.controller");
-const albumController = require("../controllers/album.controller");
+const albumsController = require("../controllers/album.controller");
+const commentsController = require("../controllers/comment.controller");
 const fileUploader = require("../config/cloudinary.config");
 
 const SCOPES = ["profile", "email"];
@@ -50,20 +51,16 @@ router.get(
   authMiddlewares.isAuthenticated,
   birdsController.birdDetailTotal
 );
-router.get(
-  "/birds/birdCreate",
-  authMiddlewares.isAuthenticated,
-  birdsController.create
-);
-router.post(
-  "/birds/birdCreate",
-  authMiddlewares.isAuthenticated,
-  fileUploader.single("image"),
-  birdsController.doCreate
-);
+router.get( "/birds/birdCreate", authMiddlewares.isAuthenticated, birdsController.create);
+router.post( "/birds/birdCreate", authMiddlewares.isAuthenticated, fileUploader.single("image"), birdsController.doCreate);
 
 //ALBUM
-router.get("/albums/albumCreate", albumController.create);
-router.post("/albums", fileUploader.single("image"), albumController.doCreate);
+router.get("/albums/albumCreate", albumsController.create);
+router.post("/albums", fileUploader.single("image"), albumsController.doCreate);
+
+//COMENTS
+// router.get("/comments/commentCreate", authMiddlewares.isAuthenticated, commentsController.create);
+router.post("/comments/:birdId", authMiddlewares.isAuthenticated, commentsController.doCreate)
+
 
 module.exports = router;
