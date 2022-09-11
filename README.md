@@ -4,4 +4,4 @@
 
 //TODO
 
-user is required -> buscar name:user
+list de las fotos de los albums

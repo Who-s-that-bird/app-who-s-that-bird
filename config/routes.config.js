@@ -7,7 +7,7 @@ const usersController = require("../controllers/user.controller");
 const birdsController = require("../controllers/birds.controller");
 const albumsController = require("../controllers/album.controller");
 const commentsController = require("../controllers/comment.controller");
-const photoController = require("../controllers/photo.controller")
+const photosController = require("../controllers/photos.controller")
 const fileUploader = require("../config/cloudinary.config");
 
 
@@ -65,8 +65,9 @@ router.post("/albums", fileUploader.single("image"), albumsController.doCreate);
 router.post("/comments/:birdId", authMiddlewares.isAuthenticated, commentsController.doCreate)
 
 //PHOTOS
-router.get("/photos/photoCreate", authMiddlewares.isAuthenticated, photoController.create)
-router.post("/photos/photoCreate", authMiddlewares.isAuthenticated, fileUploader.single("image"), photoController.doCreate)
+router.get("/albums/albumDetail", authMiddlewares.isAuthenticated, photosController.list)
+router.get("/photos/photoCreate", authMiddlewares.isAuthenticated, photosController.create)
+router.post("/photos/photoCreate", authMiddlewares.isAuthenticated, fileUploader.single("image"), photosController.doCreate)
 
 
 

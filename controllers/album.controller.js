@@ -8,8 +8,8 @@ const Album = require("../models/album.model");
 
 //List
 module.exports.list = (req, res, next) => {
-  Bird.find().
-  then((albums) => {
+  Bird.find()
+  .then((albums) => {
     res.render("partials/album", {albums})
   })
 }

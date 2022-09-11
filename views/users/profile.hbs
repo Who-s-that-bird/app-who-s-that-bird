@@ -10,7 +10,7 @@
           alt={{currentUser.name}}
           referrerpolicy="no-referrer"
           />
-        <h2>Hi {{currentUser.name}}, welcome to your profile!</h2>
+        <h2>Hi {{currentUser.name}}, bienvenido a tu perfil!</h2>
         <hr class="my-4" />
         <a
           href="/birds/birdCreate"
@@ -27,27 +27,27 @@
 
       <div class="galery-container">
         <h2 class="title-galery">Mis albums</h2>
-        <div class="galery-container">
+        
 
         {{#each albums as |album| }}
 
-                 <div class="card rounded" style="width: 18rem;  ">
+                 <div class="card rounded" style="width: 18rem">
                   <a href="/albums/albumDetail"><img
                   src="{{album.url}}"
                    class="card-img-top mt-4  rounded-circle"
-                   alt="{{bird.name}}"
+                   alt="caca"
                    width="600"
-                 /> </a>
+                 />
+                 
+                  </a>
                    <div class="card-body">
-                   <h3 class="card-title">{{bird.name}}</h3>
+                   <h3 class="card-title">{{album.bird.name}}</h3>
         
                   </div>
                 </div>
    
                 {{/each}}
               </div>
-
-        </div>
       </div>
   </div>
-  <a href=""></a>
+  

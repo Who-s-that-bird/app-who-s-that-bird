@@ -1,25 +1,28 @@
 
-<h1>caca</h1>
+<h1>Detalle del álbum</h1>
 
-  <a href="/photos/photoCreate"
-     class="btn btn-primary bg-light-green border-0"
-     >Añade una foto</a>
+  
 
+<div class="backcontainer row row-cols-4">
 
-{{#each albums as |album|}}
+{{#each photos as |photo| }}
 
-    <div class="card rounded" style="width: 18 rem">
-        <img src="{{album.bird.url}}"
-        class="card-img-top mt-4  rounded-circle"
-        alt=“{{album.bird.name}}”
+    <p>existe!</p>
+
+    <div class="card rounded" style="width: 18rem;">
+
+        <img src="{{photo.url}}"
+        class="card-img-top mt-4  "
+        alt="{{photo._id}}"
         width="600"
       />
-      <div class="card-body">
-        <h3 class="card-title">{{bird.name}}</h3>
-
-
-
     </div>
 
 
 {{/each}}
+</div>
+
+<a href="/photos/photoCreate"
+     class="btn btn-primary bg-light-green border-0"
+     >Añade una foto</a>
+
