@@ -5,3 +5,4 @@
 //TODO
 
 list de las fotos de los albums
+profile --> isAdmin 

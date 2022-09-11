@@ -40,4 +40,16 @@ module.exports.doCreate = (req, res, next) => {
         next(err);
       });
   };
+
+
+// DELETE
+module.exports.delete = (req, res, next) => {
+  const { id } = req.params;
+
+  Photo.findByIdAndDelete(id)
+    .then(() => {
+      res.redirect("/albums/albumDetail");
+    })
+    .catch(next);
+};
  

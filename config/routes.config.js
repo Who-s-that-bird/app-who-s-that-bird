@@ -65,9 +65,10 @@ router.post("/albums", fileUploader.single("image"), albumsController.doCreate);
 router.post("/comments/:birdId", authMiddlewares.isAuthenticated, commentsController.doCreate)
 
 //PHOTOS
-router.get("/albums/albumDetail", authMiddlewares.isAuthenticated, photosController.list)
+router.get("/albums/albumDetail", authMiddlewares.isAuthenticated, photosController.list) //hay que terminar este paso
 router.get("/photos/photoCreate", authMiddlewares.isAuthenticated, photosController.create)
 router.post("/photos/photoCreate", authMiddlewares.isAuthenticated, fileUploader.single("image"), photosController.doCreate)
+router.post("albums/albumDetail", authMiddlewares.isAuthenticated, photosController.delete)
 
 
 

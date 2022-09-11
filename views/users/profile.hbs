@@ -21,6 +21,12 @@
           class="btn btn-primary bg-light-green border-0"
         >Crea un álbum</a>
         
+      {{#if currentUser.isAdmin === true }}
+
+      <a href="/users/adminForm.hbs"  class="btn btn-primary bg-light-green border-0"
+      >Añade publicación diaria</a>
+      {{/if}}
+
       </div>
 
 

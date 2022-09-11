@@ -5,12 +5,12 @@
 
 <div class="backcontainer row row-cols-4">
 
+<p>no consigo q pinte las cards!</p>
+
 {{#each photos as |photo| }}
 
-    <p>existe!</p>
-
     <div class="card rounded" style="width: 18rem;">
-
+      {{#if photo}}
         <img src="{{photo.url}}"
         class="card-img-top mt-4  "
         alt="{{photo._id}}"
@@ -18,6 +18,11 @@
       />
     </div>
 
+     <form action="/albums/albumDetail.delete" method="POST">  {{!mirar el action de este formulario}}
+      <button type="submit" class="btn btn-danger">Borrar</button>
+    </form>
+
+  {{/if}}
 
 {{/each}}
 </div>
