@@ -7,7 +7,7 @@
           type="text"
           name="name"
           class="custom-form-control form-control py-2 ps-4 {{#if errors.name}}is-invalid{{/if}}"
-          placeholder="Name"
+          placeholder="Nombre de usuario"
           aria-label="User name"
           value="{{ user.name }}"
         >
@@ -19,7 +19,7 @@
           type="text"
           name="email"
           class="custom-form-control form-control py-2 ps-4 {{#if errors.email}}is-invalid{{/if}}"
-          placeholder="Email: user@example.org"
+          placeholder="Email: usuario@ejemplo.org"
           aria-label="User email"
           value="{{ user.email }}"
         >
@@ -32,7 +32,7 @@
           type="password"
           name="password"
           class="custom-form-control form-control py-2 ps-4 {{#if errors.password}}is-invalid{{/if}}"
-          placeholder="Password"
+          placeholder="Contraseña"
           aria-label="User password"
         >
         <button class="btn btn-outline-secondary password-toggle c-dark" type="button">
@@ -42,11 +42,11 @@
       </div>
 
       <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-primary bg-light-green border-0">Register</button>
+        <button type="submit" class="btn btn-primary bg-light-green border-0">Registro</button>
         <div class="d-grid gap-2 mt-2">
           <a href="/login/google" class="btn btn-danger border-0">
             <i class="fa fa-google"></i>
-            Register with Google
+            Registro con Google
           </a>
         </div>
       </div>

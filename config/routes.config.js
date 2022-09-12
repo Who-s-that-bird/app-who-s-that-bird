@@ -24,21 +24,10 @@ router.post("/login", authController.doLogin);
 router.get("/logout", authMiddlewares.isAuthenticated, authController.logout);
 //passport auth local token
 router.get(
-  "/activate/:token",
-  authMiddlewares.isNotAuthenticated,
-  authController.activateAccount
-);
+  "/activate/:token", authMiddlewares.isNotAuthenticated, authController.activateAccount );
 //passport auth google credentials
-router.get(
-  "/login/google",
-  authMiddlewares.isNotAuthenticated,
-  passport.authenticate("google-auth", { scope: SCOPES })
-);
-router.get(
-  "/auth/google/callback",
-  authMiddlewares.isNotAuthenticated,
-  authController.doLoginGoogle
-);
+router.get("/login/google", authMiddlewares.isNotAuthenticated, passport.authenticate("google-auth", { scope: SCOPES }));
+router.get("/auth/google/callback", authMiddlewares.isNotAuthenticated, authController.doLoginGoogle);
 
 // USERS
 router.get("/profile", authMiddlewares.isAuthenticated, usersController.profile);
@@ -48,24 +37,19 @@ router.get("/albums/albumDetail", authMiddlewares.isAuthenticated, usersControll
 //BIRDS
 router.get("/birdslist", birdsController.list);
 router.get("/bird/:id", birdsController.birdDetail);
-router.get(
-  "/bird/:id/total",
-  authMiddlewares.isAuthenticated,
-  birdsController.birdDetailTotal
-);
-router.get( "/birds/birdCreate", authMiddlewares.isAuthenticated, birdsController.create);
-router.post( "/birds/birdCreate", authMiddlewares.isAuthenticated, fileUploader.single("image"), birdsController.doCreate);
+router.get("/bird/:id/total",  authMiddlewares.isAuthenticated, birdsController.birdDetailTotal);
+router.get("/birds/birdCreate", authMiddlewares.isAuthenticated, birdsController.create);
+router.post("/birds/birdCreate", authMiddlewares.isAuthenticated, fileUploader.single("image"), birdsController.doCreate);
 
 //ALBUM
 router.get("/albums/albumCreate", albumsController.create);
 router.post("/albums", fileUploader.single("image"), albumsController.doCreate);
 
 //COMENTS
-// router.get("/comments/commentCreate", authMiddlewares.isAuthenticated, commentsController.create);
 router.post("/comments/:birdId", authMiddlewares.isAuthenticated, commentsController.doCreate)
 
 //PHOTOS
-router.get("/albums/:id", authMiddlewares.isAuthenticated, albumsController.detail) //hay que terminar este paso
+router.get("/albums/:id", authMiddlewares.isAuthenticated, albumsController.detail) 
 router.get("/albums/:id/addPhoto", authMiddlewares.isAuthenticated, photosController.create)
 router.post("/albums/:id/addPhoto", authMiddlewares.isAuthenticated, fileUploader.single("image"), photosController.doCreate)
 router.post("/albums/albumDetail", authMiddlewares.isAuthenticated, photosController.delete)
