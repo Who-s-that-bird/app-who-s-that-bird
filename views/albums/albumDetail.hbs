@@ -7,7 +7,7 @@
 
 <p>no consigo q pinte las cards!</p>
 
-{{#each photos as |photo| }}
+{{#each album.photos as |photo| }}
 
     <div class="card rounded" style="width: 18rem;">
       {{#if photo}}
@@ -27,7 +27,7 @@
 {{/each}}
 </div>
 
-<a href="/photos/photoCreate"
+<a href="/albums/{{album._id}}/addPhoto"
      class="btn btn-primary bg-light-green border-0"
      >Añade una foto</a>
 

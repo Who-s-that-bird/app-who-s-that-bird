@@ -1,18 +1,19 @@
 const createError = require("http-errors");
 const uploadCloud = require("../config/cloudinary.config");
 const Bird = require("../models/Bird.model");
-
-//CRUD
 const Album = require("../models/album.model");
 
+//CRUD
 
-//List
-module.exports.list = (req, res, next) => {
-  Bird.find()
-  .then((albums) => {
-    res.render("partials/album", {albums})
-  })
-}
+//DETAIL
+module.exports.detail = (req, res, next) => {
+  Album.findById(req.params.id)
+    .populate("photos")
+    .then((album) => {
+      res.render("albums/albumDetail", { album });
+    })
+    .catch(next);
+};
 
 //Create
 module.exports.create = (req, res, next) => {
@@ -34,7 +35,7 @@ module.exports.doCreate = (req, res, next) => {
 
   Album.create(albumToCreate)
     .then((album) => {
-      res.redirect(`/profile`); 
+      res.redirect(`/profile`);
     })
     .catch((err) => {
       next(err);
