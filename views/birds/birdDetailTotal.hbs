@@ -22,10 +22,29 @@
     </div>
     <a class="volver-al-listado"href="/birdslist">Volver al listado</a>
   </div>
+
   <div class="galery-container">
     <h2 class="title-galery">Galería de imágenes</h2>
+
     <div>
-  
+    {{#each bird.albums as |album|}}
+
+    <div class="card rounded" style="width: 18rem">
+          <a href="/albums/{{album._id}}"><img
+              src="{{album.url}}"
+              class="card-img-top mt-4 rounded-circle"
+              alt="caca"
+              width="600"
+            />
+
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">{{album.bird.name}}</h3>
+
+          </div>
+        </div>
+
+    {{/each}}
   </div>
 </div>
 

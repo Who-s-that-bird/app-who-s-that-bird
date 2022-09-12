@@ -5,8 +5,6 @@
 
 <div class="backcontainer row row-cols-4">
 
-<p>no consigo q pinte las cards!</p>
-
 {{#each album.photos as |photo| }}
 
     <div class="card rounded" style="width: 18rem;">
@@ -18,7 +16,7 @@
       />
     </div>
 
-     <form action="/albums/albumDetail" method="POST">  {{!mirar el action de este formulario}}
+     <form action="/albums/albumDetail" method="POST">  
       <button type="submit" class="btn btn-danger">Borrar</button>
     </form>
 
