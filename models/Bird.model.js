@@ -51,7 +51,7 @@ birdSchema.virtual("albums", {
   justOne: false,
 });
 
-birdSchema.virtual("comments", {
+birdSchema.virtual("annotations", {
   ref: "Comment",
   localField: "_id",
   foreignField: "bird",

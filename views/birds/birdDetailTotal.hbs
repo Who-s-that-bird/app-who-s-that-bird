@@ -27,8 +27,10 @@
     <div>
       {{>carousel}}
   </div>
+</div>
 
-  <form class="form-floating" action="/comments/{{bird.id}}" method="post">
+<section class="comment">
+    <form class="form-floating" action="/comments/{{bird.id}}" method="post">
     <textarea
       class="form-control"
       name="annotation"
@@ -38,6 +40,10 @@
     <label for="floatingTextarea">Comments</label>
     <button type="submit">Enviar</button>
   </form>
+</section>
 
-</div>
-<a href="/birdslist">Volver al listado</a>
+{{#each bird.annotations as |comment| }}
+<h2>{{comment.user.name}}</h2>
+  <p>{{comment.annotation}}</p>
+
+{{/each}}

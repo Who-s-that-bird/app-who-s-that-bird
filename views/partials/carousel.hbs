@@ -8,9 +8,9 @@
       {{#each bird.albums as |image|}}
         <div
           class="carousel-item active"
-          style=" margin-left: 8rem"
+          style=" margin-bottom: 2rem"
         >
-          <img src="{{image.url}}" class="d-block w-200" alt="{{bird.name}}" style="border-radius: 1rem;" />
+          <img src="{{image.url}}" class="d-block" alt="{{bird.name}}" style="border-radius: 1rem; max-width: 65rem; " />
         </div>
       {{/each}}
 

@@ -34,7 +34,12 @@ module.exports.birdDetailTotal = (req, res, next) => {
   const { id } = req.params;
   Bird.findById(id)
     .populate("albums")
-    .populate("comments")
+    .populate({
+      path: "annotations",
+      populate: {
+        path: "user",
+      },
+    })
     .then((bird) => {
       console.log(id, bird);
       res.render("birds/birdDetailTotal", { bird });

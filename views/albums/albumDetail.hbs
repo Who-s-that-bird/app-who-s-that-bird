@@ -1,21 +1,33 @@
 
-<h1>caca</h1>
+<h1>Detalle del álbum</h1>
 
+  
 
-{{#each albums as |album|}}
+<div class="backcontainer row row-cols-4">
 
-    <div class="card rounded" style="width: 18 rem">
-        <img src="{{album.bird.url}}"
-        class="card-img-top mt-4  rounded-circle"
-        alt=“{{album.bird.name}}”
+<p>no consigo q pinte las cards!</p>
+
+{{#each album.photos as |photo| }}
+
+    <div class="card rounded" style="width: 18rem;">
+      {{#if photo}}
+        <img src="{{photo.url}}"
+        class="card-img-top mt-4  "
+        alt="{{photo._id}}"
         width="600"
       />
-      <div class="card-body">
-        <h3 class="card-title">{{bird.name}}</h3>
-
-
-
     </div>
 
+     <form action="/albums/albumDetail" method="POST">  {{!mirar el action de este formulario}}
+      <button type="submit" class="btn btn-danger">Borrar</button>
+    </form>
+
+  {{/if}}
 
 {{/each}}
+</div>
+
+<a href="/albums/{{album._id}}/addPhoto"
+     class="btn btn-primary bg-light-green border-0"
+     >Añade una foto</a>
+

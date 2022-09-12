@@ -1,3 +1,7 @@
+#body{
+  min-height: 600rem;
+}
+
 h1 {
   margin-left: 6%;
   padding-top: 1rem;
@@ -63,3 +67,15 @@ h1 {
 .volver-al-listado {
   margin-left: 7rem;
 }
+.comment{
+  margin-left: 30%;
+  padding-right: 20%;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 8rem;
+}
+  

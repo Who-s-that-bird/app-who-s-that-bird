@@ -1,22 +1,12 @@
 <div class="row justify-content-center mt-4">
   <div class="col col-sm-8 col-md-6 col-lg-4">
-    <h1 class="my-4">Nuevo Album</h1>
-
-    <form action="/albums" method="POST" class="" enctype="multipart/form-data">
-      <select
-        class="form-select"
-        aria-label="Default select example"
-        name="bird"
-        required
-      >
-        <option disabled selected>Open this select menu</option>
-        {{#each birds as |bird|}}
-          <option value="{{bird.id}}"
-                  
-          >{{bird.name}}</option>
-        {{/each}}
-      </select>
-
+    <h1 class="my-4">{{album.bird.name}}</h1>
+    <form
+      action="/albums/{{album._id}}/addPhoto"
+      method="POST"
+      class=""
+      enctype="multipart/form-data"
+    >
       <div class="mb-3">
         <label for="formFile" class="form-label">Añade foto</label>
         <input class="form-control" type="file" id="formFile" name="image" />

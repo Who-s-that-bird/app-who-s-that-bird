@@ -1,0 +1,96 @@
+
+<h1>Escribe tu entrada del día</h1>
+
+{{!en construcción!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+
+
+    <form action="/" method="post" class=""enctype="multipart/form-data">
+      <div class="input-group mb-2">
+        <input
+          type="text"
+          name="name"
+          class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
+          placeholder="name"
+          aria-label="Bird name"
+          value="{{ bird.name }}"
+        >
+        {{#if error}}<div class="text-danger text-center mb-2">{{ error }}</div>{{/if}}
+      </div>
+      <div class="input-group mb-2">
+        <input
+          type="text"
+          name="scifyName"
+          class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
+          placeholder="Scientific Name"
+          aria-label="Scientific Name"
+          value="{{ bird.scifyName }}"
+        >
+        {{#if error}}<div class="text-danger text-center mb-2">{{ error }}</div>{{/if}}
+      </div>
+      <div class="input-group mb-2">
+        <input
+          type="text"
+          name="comment"
+          class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
+          placeholder="Comment"
+          aria-label="Comment"
+          value="{{ bird.comment }}"
+        >
+        {{#if error}}<div class="text-danger text-center mb-2">{{ error }}</div>{{/if}}
+      </div>
+      <div class="input-group mb-2">
+        <input
+          type="text"
+          name="weight"
+          class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
+          placeholder="Weight"
+          aria-label="Weight"
+          value="{{ bird.weight }}"
+        >
+        {{#if error}}<div class="text-danger text-center mb-2">{{ error }}</div>{{/if}}
+      </div>
+     <div class="input-group mb-2">
+        <input
+          type="text"
+          name="size"
+          class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
+          placeholder="Size"
+          aria-label="Size"
+          value="{{ bird.size }}"
+        >
+        {{#if error}}<div class="text-danger text-center mb-2">{{ error }}</div>{{/if}}
+      </div>
+       <div class="input-group mb-2">
+        <input
+          type="text"
+          name="wingspam"
+          class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
+          placeholder="Wingspam"
+          aria-label="Wingspam"
+          value="{{ bird.wingspan }}"
+        >
+        {{#if error}}<div class="text-danger text-center mb-2">{{ error }}</div>{{/if}}
+      </div>
+      <div class="input-group mb-2">
+        <input
+          type="text"
+          name="longevity"
+          class="custom-form-control form-control py-2 ps-4 {{#if error}}is-invalid{{/if}}"
+          placeholder="longevity"
+          aria-label="longevity"
+          value="{{ bird.longevity }}"
+        >
+        {{#if error}}<div class="text-danger text-center mb-2">{{ error }}</div>{{/if}}
+      </div>
+        
+     <div class="mb-3">
+        <label for="formFile" class="form-label">Añade foto de perfil del ave</label>
+        <input class="form-control" type="file" id="formFile" name="image">
+        {{#if error}}<div class="text-danger text-center mb-2">{{ error }}</div>{{/if}}
+     </div>
+      <div class="input-group mb-2">
+        <button type="submit" class="btn btn-primary bg-light-green border-0">Añadir cita</button>
+      </div>
+    </form>
+  </div>
+</div>

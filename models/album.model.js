@@ -13,8 +13,15 @@ const albumSchema = new mongoose.Schema({
   },
 
   url: {
-    type: String,
+    type: [String],
   },
+});
+
+albumSchema.virtual("photos", {
+  ref: "Photo",
+  localField: "_id",
+  foreignField: "album",
+  justOne: false,
 });
 
 const Album = mongoose.model("Album", albumSchema);

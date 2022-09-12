@@ -39,25 +39,6 @@ module.exports.doCreate = (req, res, next) => {
       res.redirect(`/bird/${birdId}/total`);
     })
     .catch(next);
-  // console.log(req.body);
-  // const commentToCreate = req.body;
-
-  // if (req.file) {
-  //   commentToCreate.url = req.file.path;
-  // }
-  // commentToCreate.user = req.user._id;
-
-  // console.log(commentToCreate);
-  // console.log(commentToCreate.user);
-  // console.log(commentToCreate.url);
-
-  // Comment.create(commentToCreate)
-  //   .then((comment) => {
-  //     res.redirect(`/comment/${comment._id}`);
-  //   })
-  //   .catch((err) => {
-  //     next(err);
-  //   });
 };
 
 //UPDATE /EDIT
