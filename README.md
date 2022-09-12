@@ -7,3 +7,4 @@
 list de las fotos de los albums
 carousel
 profile --> isAdmin 
+psot de los comment
