@@ -7,7 +7,7 @@
           type="text"
           name="email"
           class="custom-form-control form-control py-2 ps-4 {{#if errors}}is-invalid{{/if}}"
-          placeholder="Email: user@example.org"
+          placeholder="Email: usuario@ejemplo.org"
           aria-label="User email"
           value="{{ user.email }}"
         >
@@ -19,7 +19,7 @@
           type="password"
           name="password"
           class="custom-form-control form-control py-2 ps-4 {{#if errors}}is-invalid{{/if}}"
-          placeholder="Password"
+          placeholder="Contraseña"
           aria-label="User password"
         >
         <button class="btn btn-outline-secondary password-toggle c-dark" type="button">
@@ -29,11 +29,11 @@
           {{#if message}}<div class="text-center mb-2">{{message}}</div>{{/if}}
           {{#if errors}}<div class="text-danger text-center mb-2">{{ errors }}</div>{{/if}}
         <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-primary bg-light-green border-0">Login</button>
+        <button type="submit" class="btn btn-primary bg-light-green border-0">Inicia esión</button>
         <div class="d-grid gap-2 mt-2">
           <a href="/login/google" class="btn btn-danger border-0">
             <i class="fa fa-google"></i>
-            Login with Google
+            Inicia sesión con Google
           </a>
         </div>
       </div>
