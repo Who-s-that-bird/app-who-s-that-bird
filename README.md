@@ -5,4 +5,5 @@
 //TODO
 
 list de las fotos de los albums
+carousel
 profile --> isAdmin 
