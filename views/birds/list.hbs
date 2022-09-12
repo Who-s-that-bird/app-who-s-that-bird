@@ -14,8 +14,11 @@
       />
       <div class="card-body">
         <h3 class="card-title" style="min-height: 8rem">{{bird.name}}</h3>
-        
-        <a href="/bird/{{bird._id}}" class="btn btn-primary mt-4" style="margin-bottom: 1rem">Ver detalles</a>
+        {{#if ../currentUser}}
+          <a href="/bird/{{bird._id}}/total" class="btn btn-primary mt-4" style="margin-bottom: 1rem">Ver detalles</a>
+        {{else}}
+          <a href="/bird/{{bird._id}}" class="btn btn-primary mt-4" style="margin-bottom: 1rem">Ver detalles</a>
+        {{/if}}
       </div>
     </div>
    
