@@ -1,6 +1,7 @@
 const uploadCloud = require("../config/cloudinary.config");
 const Album = require("../models/album.model");
 const Bird = require("../models/Bird.model");
+const createError =require("http-errors")
 
 //CRUD
 
@@ -36,11 +37,14 @@ module.exports.doCreate = (req, res, next) => {
 
 // DELETE
 module.exports.delete = (req, res, next) => {
-  const { id } = req.params;
+  const photoToDelete = req.params;
 
-  Photo.findByIdAndDelete(id)
-    .then(() => {
-      res.redirect("/albums/albumDetail");
-    })
-    .catch(next);
-};
+  Photo.findByIdAndDelete(photoToDelete)
+  .then((photo)=> {
+    res.status(204).send(photo)
+  })
+  .catch ((err)=>{
+    console.error(err);
+    next(createError(404, "Foto no enocntrada"))
+  })
+}

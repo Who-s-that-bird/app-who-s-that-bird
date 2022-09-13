@@ -52,6 +52,6 @@ router.post("/comments/:birdId", authMiddlewares.isAuthenticated, commentsContro
 router.get("/albums/:id", authMiddlewares.isAuthenticated, albumsController.detail) 
 router.get("/albums/:id/addPhoto", authMiddlewares.isAuthenticated, photosController.create)
 router.post("/albums/:id/addPhoto", authMiddlewares.isAuthenticated, fileUploader.single("image"), photosController.doCreate)
-router.post("/albums/albumDetail", authMiddlewares.isAuthenticated, photosController.delete)
+router.delete("/albums/:id", authMiddlewares.isAuthenticated, photosController.delete)
 
 module.exports = router;
