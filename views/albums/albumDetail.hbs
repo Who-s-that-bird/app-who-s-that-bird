@@ -1,11 +1,10 @@
-
-<h1>Detalle del álbum</h1>
-
+<div class="content">
+<h2>Album</h2>
   
 
 <div class="backcontainer row row-cols-4">
 
-<p>no consigo q pinte las cards!</p>
+
 
 {{#each album.photos as |photo| }}
 
@@ -18,7 +17,7 @@
       />
     </div>
 
-     <form action="/albums/albumDetail" method="POST">  {{!mirar el action de este formulario}}
+     <form action="/albums/{{album._id}}/deletePhoto" method="POST">  {{!mirar el action de este formulario}}
       <button type="submit" class="btn btn-danger">Borrar</button>
     </form>
 
@@ -31,3 +30,5 @@
      class="btn btn-primary bg-light-green border-0"
      >Añade una foto</a>
 
+</div>
+</div>
