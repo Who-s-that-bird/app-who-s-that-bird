@@ -45,3 +45,15 @@ module.exports.doCreate = (req, res, next) => {
 //Edit
 
 //Delete
+module.exports.delete = (req, res, next) => {
+  const { id } = req.params;
+
+Album.findByIdAndDeleteOne(req.params.id)
+    .then(()=> {
+      res.redirect("/profile")
+    })
+    .catch((err) => {
+      console.error(err);
+      next(createError(404, "Album no encontrado"));
+    })
+};

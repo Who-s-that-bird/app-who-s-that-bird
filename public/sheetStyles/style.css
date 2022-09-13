@@ -53,7 +53,7 @@ h1 {
 }
 
 .title-galery {
-  margin-left: 16rem;
+  margin-left: 30rem;
   margin-bottom: 1rem;
 }
 .small {
@@ -78,6 +78,7 @@ h1 {
   align-items: center;
   max-height: 8rem;
 }
+<<<<<<< HEAD
   
 .borrar{
   margin-left: 1rem;
@@ -85,3 +86,8 @@ h1 {
   margin-bottom: -1rem;
   color: red;
   }
+=======
+.content {
+  height: calc(100vh - 316px);
+}
+>>>>>>> 375b3006d052bd2b685b80068d8d0193859244ec

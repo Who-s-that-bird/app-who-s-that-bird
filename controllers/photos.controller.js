@@ -1,7 +1,7 @@
 const uploadCloud = require("../config/cloudinary.config");
 const Album = require("../models/album.model");
 const Bird = require("../models/Bird.model");
-const createError =require("http-errors")
+const createError = require("http-errors");
 
 //CRUD
 
@@ -37,14 +37,13 @@ module.exports.doCreate = (req, res, next) => {
 
 // DELETE
 module.exports.delete = (req, res, next) => {
-  const photoToDelete = req.params;
-
-  Photo.findByIdAndDelete(photoToDelete)
-  .then((photo)=> {
-    res.status(204).send(photo)
-  })
-  .catch ((err)=>{
-    console.error(err);
-    next(createError(404, "Foto no enocntrada"))
-  })
-}
+  Photo.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect("albums/:id");
+    })
+    .catch((err) => {
+      console.error(err);
+      next(createError(404, "Imagen no encontrada"));
+    });
+  
+};

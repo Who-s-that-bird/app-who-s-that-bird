@@ -44,6 +44,7 @@ router.post("/birds/birdCreate", authMiddlewares.isAuthenticated, fileUploader.s
 //ALBUM
 router.get("/albums/albumCreate", albumsController.create);
 router.post("/albums", fileUploader.single("image"), albumsController.doCreate);
+router.post("/albums/:id/deleteAlbum", authMiddlewares.isAuthenticated, albumsController.delete);
 
 //COMENTS
 router.post("/comments/:birdId", authMiddlewares.isAuthenticated, commentsController.doCreate)
@@ -52,6 +53,6 @@ router.post("/comments/:birdId", authMiddlewares.isAuthenticated, commentsContro
 router.get("/albums/:id", authMiddlewares.isAuthenticated, albumsController.detail) 
 router.get("/albums/:id/addPhoto", authMiddlewares.isAuthenticated, photosController.create)
 router.post("/albums/:id/addPhoto", authMiddlewares.isAuthenticated, fileUploader.single("image"), photosController.doCreate)
-router.delete("/albums/:id", authMiddlewares.isAuthenticated, photosController.delete)
+router.post("/albums/:id/deletePhoto", authMiddlewares.isAuthenticated, photosController.delete)
 
 module.exports = router;

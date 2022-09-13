@@ -1,9 +1,10 @@
-
-<h1>Detalle del álbum</h1>
-
+<div class="content">
+<h2>Album</h2>
   
 
 <div class="backcontainer row row-cols-4">
+
+
 
 {{#each album.photos as |photo| }}
 
@@ -19,7 +20,10 @@
       />
     </div>
 
-     
+     <form action="/albums/{{album._id}}/deletePhoto" method="POST">  {{!mirar el action de este formulario}}
+      <button type="submit" class="btn btn-danger">Borrar</button>
+    </form>
+
   {{/if}}
 
 {{/each}}
@@ -29,19 +33,5 @@
      class="btn btn-primary bg-light-green border-0"
      >Añade una foto</a>
 
-<script>
-  const removeNodes = document.querySelectorAll(".remove");
-  for (let node of removeNodes) {
-    node.addEventListener('click', () => {
-      const nodeId = node.dataset.id;
-      axios.delete(`/photos/${nodeId}`)
-        .then(responseFromApi => {
-          console.log('Foto borrada******************', responseFromApi);
-          if(responseFromApi.status == 204) {
-            document.querySelector(`.photo[data-id="${nodeId}"]`).remove();
-          }
-        })
-        .catch(error => console.log('Error!', error))
-    })
-  }
-</script>
+</div>
+</div>
