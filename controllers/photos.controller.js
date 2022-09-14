@@ -37,13 +37,16 @@ module.exports.doCreate = (req, res, next) => {
 
 // DELETE
 module.exports.delete = (req, res, next) => {
-  Photo.findByIdAndDelete(req.params.id)
-    .then(() => {
-      res.redirect("albums/:id");
-    })
-    .catch((err) => {
-      console.error(err);
-      next(createError(404, "Imagen no encontrada"));
-    });
   
-};
+  const { id } = req.params
+  Photo.findByIdAndDelete(id)
+  .then(() => {
+    console.log("****************************************");
+    console.log(id);
+    res.redirect("/albums/albumDetail")
+  })
+  .catch((err) => {
+    console.error(err)
+    next(err)
+  })
+}
