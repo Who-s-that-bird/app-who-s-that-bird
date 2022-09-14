@@ -23,8 +23,7 @@ router.get("/login", authMiddlewares.isNotAuthenticated, authController.login);
 router.post("/login", authController.doLogin);
 router.get("/logout", authMiddlewares.isAuthenticated, authController.logout);
 //passport auth local token
-router.get(
-  "/activate/:token", authMiddlewares.isNotAuthenticated, authController.activateAccount );
+router.get("/activate/:token", authMiddlewares.isNotAuthenticated, authController.activateAccount );
 //passport auth google credentials
 router.get("/login/google", authMiddlewares.isNotAuthenticated, passport.authenticate("google-auth", { scope: SCOPES }));
 router.get("/auth/google/callback", authMiddlewares.isNotAuthenticated, authController.doLoginGoogle);
