@@ -1,5 +1,4 @@
 <div class="content">
-<h1>Detalle {{bird.name}}</h1>
 
 <div class="total-detail-container">
   <div class="column">
@@ -24,47 +23,48 @@
     <a class="volver-al-listado"href="/birdslist">Volver al listado</a>
   </div>
 
-  <div class="galery-container">
-    <h2 class="title-galery">Galería de imágenes</h2>
 
-    <div>
-    {{#each bird.albums as |album|}}
+<div class="detail-total-container ">
+    <section class="galery-container ">
+        {{#each bird.albums as |album|}}
+        <div class="card rounded" style="width: 18rem; padding-left: 1rem; padding-right: 1rem">
+              <a href="/albums/{{album._id}}"><img
+                  src="{{album.url}}"
+                  class="card-img-top mt-4 "
+                  alt="{{album.bird.name}}"
+                  width="600"/>
+             </a>
+              <div class="card-body">
+                <h3 class="card-title">{{album.bird.name}}</h3>
 
-    <div class="card rounded" style="width: 18rem">
-          <a href="/albums/{{album._id}}"><img
-              src="{{album.url}}"
-              class="card-img-top mt-4 rounded-circle"
-              alt="caca"
-              width="600"
-            />
+              </div>
+            </div>
+        {{/each}}
+    </section>
 
-          </a>
-          <div class="card-body">
-            <h3 class="card-title">{{album.bird.name}}</h3>
+    <section class="comment">
+        <form class="form-floating" action="/comments/{{bird.id}}" method="post">
+        <textarea
+          class="form-control"
+          name="annotation"
+          placeholder="Deja un comentario aquí."
+          id="floatingTextarea"
+          style="width:250%"
+        ></textarea>
+        <label for="floatingTextarea">Comentario</label>
+        <button type="submit">Enviar</button>
+      </form>
 
-          </div>
-        </div>
+      
+            {{#each bird.annotations as |comment| }}
+            <div class="chat">
+            <s class="chat-user">{{comment.user.name}}:</s>
+            <p class="annotation">{{comment.annotation}}</p>
+              </div>
+            {{/each}}
+    
+    </section>
 
-    {{/each}}
-  </div>
+
 </div>
-
-<section class="comment">
-    <form class="form-floating" action="/comments/{{bird.id}}" method="post">
-    <textarea
-      class="form-control"
-      name="annotation"
-      placeholder="Deja un comentario aquí."
-      id="floatingTextarea"
-    ></textarea>
-    <label for="floatingTextarea">Comentario</label>
-    <button type="submit">Enviar</button>
-  </form>
-</section>
-
-{{#each bird.annotations as |comment| }}
-<h2>{{comment.user.name}}</h2>
-  <p>{{comment.annotation}}</p>
-
-{{/each}}
 </div>
