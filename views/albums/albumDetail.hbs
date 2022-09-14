@@ -1,16 +1,18 @@
-
-<h1>Detalle del álbum</h1>
-
+<div class="content">
+<h2>Album</h2>
   
 
 <div class="backcontainer row row-cols-4">
 
-<p>no consigo q pinte las cards!</p>
+
 
 {{#each album.photos as |photo| }}
 
     <div class="card rounded" style="width: 18rem;">
       {{#if photo}}
+     <a  
+     class="borrar btn" data-id="{{photo._id}}"><img src="https://res.cloudinary.com/merjur/image/upload/v1663017361/birdApp/aspa_etothg.jpg" alt="aspa" style="max-width:2rem"></a>
+
         <img src="{{photo.url}}"
         class="card-img-top mt-4  "
         alt="{{photo._id}}"
@@ -18,7 +20,7 @@
       />
     </div>
 
-     <form action="/albums/albumDetail" method="POST">  {{!mirar el action de este formulario}}
+     <form action="/albums/{{album._id}}/deletePhoto" method="POST">  {{!mirar el action de este formulario}}
       <button type="submit" class="btn btn-danger">Borrar</button>
     </form>
 
@@ -31,3 +33,5 @@
      class="btn btn-primary bg-light-green border-0"
      >Añade una foto</a>
 
+</div>
+</div>
