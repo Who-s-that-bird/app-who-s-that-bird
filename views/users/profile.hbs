@@ -8,7 +8,7 @@
         alt={{currentUser.name}}
         referrerpolicy="no-referrer"
       />
-      <h2>Hi {{currentUser.name}}, bienvenido a tu perfil!</h2>
+      <h2>Hola {{currentUser.name}}, bienvenido a tu perfil!</h2>
       <hr class="my-4" />
       <a
         href="/birds/birdCreate"
@@ -19,25 +19,18 @@
         class="btn btn-primary bg-light-green border-0"
       >Crea un álbum</a>
 
-      {{#if currentUser.isAdmin}}
-
-        <a
-          href="/users/adminForm.hbs"
-          class="btn btn-primary bg-light-green border-0"
-        >Añade publicación diaria</a>
-      {{/if}}
-
     </div>
 
     <div class="galery-container">
-      <h2 class="title-galery">Mis albums</h2>
+      <h3 class="title-galery">Mis colecciones de fotos</h3>
+<div class="backcontainer row row-cols-4 " >
 
       {{#each albums as |album|}}
 
         <div class="card rounded" style="width: 18rem">
           <a href="/albums/{{album._id}}"><img
               src="{{album.url}}"
-              class="card-img-top mt-4 rounded-circle"
+              class="card-img-top mt-4 "
               alt="caca"
               width="600"
             />
@@ -50,6 +43,7 @@
         </div>
 
       {{/each}}
+      </div>
     </div>
   </div>
 </div>

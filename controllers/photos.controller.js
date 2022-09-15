@@ -1,6 +1,7 @@
 const uploadCloud = require("../config/cloudinary.config");
 const Album = require("../models/album.model");
 const Bird = require("../models/Bird.model");
+const createError = require("http-errors");
 
 //CRUD
 
@@ -36,11 +37,16 @@ module.exports.doCreate = (req, res, next) => {
 
 // DELETE
 module.exports.delete = (req, res, next) => {
-  const { id } = req.params;
-
+  
+  const { id } = req.params
   Photo.findByIdAndDelete(id)
-    .then(() => {
-      res.redirect("/albums/albumDetail");
-    })
-    .catch(next);
-};
+  .then(() => {
+    console.log("****************************************");
+    console.log(id);
+    res.redirect("/albums/albumDetail")
+  })
+  .catch((err) => {
+    console.error(err)
+    next(err)
+  })
+}

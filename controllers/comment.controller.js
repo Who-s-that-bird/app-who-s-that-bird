@@ -67,7 +67,7 @@ module.exports.delete = (req, res, next) => {
 
   Comment.findByIdAndDelete(id)
     .then(() => {
-      res.redirect("/comments");
+      res.redirect("/birds/birdDetailTotal");
     })
     .catch(next);
 };

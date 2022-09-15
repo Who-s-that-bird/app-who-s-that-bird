@@ -23,8 +23,7 @@ router.get("/login", authMiddlewares.isNotAuthenticated, authController.login);
 router.post("/login", authController.doLogin);
 router.get("/logout", authMiddlewares.isAuthenticated, authController.logout);
 //passport auth local token
-router.get(
-  "/activate/:token", authMiddlewares.isNotAuthenticated, authController.activateAccount );
+router.get("/activate/:token", authMiddlewares.isNotAuthenticated, authController.activateAccount );
 //passport auth google credentials
 router.get("/login/google", authMiddlewares.isNotAuthenticated, passport.authenticate("google-auth", { scope: SCOPES }));
 router.get("/auth/google/callback", authMiddlewares.isNotAuthenticated, authController.doLoginGoogle);
@@ -44,6 +43,7 @@ router.post("/birds/birdCreate", authMiddlewares.isAuthenticated, fileUploader.s
 //ALBUM
 router.get("/albums/albumCreate", albumsController.create);
 router.post("/albums", fileUploader.single("image"), albumsController.doCreate);
+router.post("/albums/:id/deleteAlbum", authMiddlewares.isAuthenticated, albumsController.delete);
 
 //COMENTS
 router.post("/comments/:birdId", authMiddlewares.isAuthenticated, commentsController.doCreate)
@@ -52,6 +52,6 @@ router.post("/comments/:birdId", authMiddlewares.isAuthenticated, commentsContro
 router.get("/albums/:id", authMiddlewares.isAuthenticated, albumsController.detail) 
 router.get("/albums/:id/addPhoto", authMiddlewares.isAuthenticated, photosController.create)
 router.post("/albums/:id/addPhoto", authMiddlewares.isAuthenticated, fileUploader.single("image"), photosController.doCreate)
-router.post("/albums/albumDetail", authMiddlewares.isAuthenticated, photosController.delete)
+router.post("/albums/:id/deletePhoto", authMiddlewares.isAuthenticated, photosController.delete)
 
 module.exports = router;
